@@ -1,27 +1,28 @@
-/* Configurações Globais do Portal Instinto Superior */
+/* estilo.css - Identidade Visual Instinto Superior */
 :root {
     --fundo: #0f0f12;
     --card-bg: #1a1a2e;
     --dourado: #c9a227;
     --texto: #e0e0e0;
-    --destaque-azul: #06b6d4;
+    --ciano: #06b6d4;
+    --vermelho-maike: #b21f1f;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--fundo);
     color: var(--texto);
     margin: 0;
     line-height: 1.6;
 }
 
-/* Menu Superior Padronizado */
+/* Menu Superior Integrado */
 header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     padding: 20px 0;
     text-align: center;
     border-bottom: 2px solid var(--dourado);
-    position: sticky; /* O menu acompanha a rolagem */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -32,16 +33,23 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 0.85em;
     transition: 0.3s;
 }
 
-nav a:hover {
-    text-shadow: 0 0 10px var(--dourado);
+nav a:hover, nav a.active {
     color: #fff;
+    text-shadow: 0 0 10px var(--dourado);
 }
 
-/* Estilo das Cards (Usado na Numerologia, Astrologia e Quiz) */
+/* Layout das Páginas */
+.content-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Estilo de Cartões (Cards) */
 .card-padrao {
     background: var(--card-bg);
     padding: 25px;
@@ -56,9 +64,22 @@ nav a:hover {
     background: #232344;
 }
 
-/* Responsividade de Imagens e Vídeos */
-img, video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* Estilo das Abas de Histórias */
+.tab-content {
+    display: none;
+    background: #161626;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #2a2a40;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
