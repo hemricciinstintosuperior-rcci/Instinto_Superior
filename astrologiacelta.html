@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Celta - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 3em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html" style="color: var(--primary);">Astrologia Celta</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>O HORÓSCOPO DAS ÁRVORES SAGRADAS E A SABEDORIA DOS DRUIDAS</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Druídica Celta</h1>
+        <p>Para os antigos sacerdotes celtas, as árvores eram ancestrais cósmicos guardiões de segredos espirituais profundos. Dividido em 13 meses lunares alinhados ao alfabeto sagrado Ogham, o Zodíaco Celta conecta o crescimento da alma aos ciclos da floresta mágica, revelando os mistérios por trás da sua **Energia Divina (Sol)**, do seu **Fluxo Emocional (Lua)** e da sua **Missão de Alma (Ascendente)**.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <!-- BROWNE / BÉRICHO (Bétula) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/betula.jpg" alt="Árvore Bétula" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Bétula (Beth) 🌳</h2>
+                    <div class="sign-date">Dez 24 a Jan 20</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Bétula é a primeira árvore a brotar após o inverno, simbolizando o pioneirismo, o renascimento e a pureza do recomeço. Sua essência divina traz uma ambição límpida, resiliência obstinada e uma capacidade fora do comum de estruturar impérios em terrenos áridos e desolados.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente reservada e auto-controlada. A Bétula encontra sua zona de segurança psíquica na estabilidade e na busca constante por excelência. Ela raramente expõe fraquezas e processa sentimentos através do planejamento focado e de metas práticas de vida.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é liderar projetos vanguardistas e demonstrar o poder da superação interna. O mundo a enxerga como uma rocha de integridade e determinação. O desafio do seu Instinto Superior é suavizar a autocobrança implacável, permitindo-se fluir com os imprevistos da jornada.</p>
+        </div>
+
+        <!-- ROWAN (Sorveira) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/sorveira.jpg" alt="Árvore Sorveira" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Sorveira (Luis) 🌿</h2>
+                    <div class="sign-date">Jan 21 a Fev 17</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Sorveira é a árvore da proteção oculta e das visões místicas. Sua identidade brilha por uma mente filosófica altamente avançada, criatividade excêntrica e um idealismo cortante. São pensadores vanguardistas dotados de uma forte veia humanitária e reformadora.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seu fluxo emocional opera de forma independente e intensamente cerebral. A Sorveira necessita de imenso espaço pessoal e afasta-se friamente quando se sente sufocada ou incompreendida. Seus afetos são expressos através da troca intelectual profunda e de ideais compartilhados.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é expandir a consciência coletiva e trazer conceitos revolucionários para a sociedade. O ambiente a percebe como uma alma magnética, original e visionária. O aprendizado evolutivo reside em ancorar suas teorias abstratas na realidade física e prática.</p>
+        </div>
+
+        <!-- ASH (Freixo) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/freixo.jpg" alt="Árvore Freixo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Freixo (Nion) 🌳</h2>
+                    <div class="sign-date">Fev 18 a Mar 17</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Freixo conecta os céus à terra, simbolizando a intuição psíquica pura, a flexibilidade mental e o talento artístico superior. Sua essência divina é camaleônica e profundamente imaginativa, captando correntes sutis e inspirações espirituais antes de todos.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Vulnerável, empático e de sentimentos oceânicos. O Freixo absorve as vibrações das pessoas e dos ambientes como uma esponja psíquica. Ele busca fusão de alma nos relacionamentos, mas pode se fechar em melancolia ou isolamento protetor caso seja ferido.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é canalizar a beleza dos mundos invisíveis através da arte, da espiritualidade ou da cura intuitiva. O mundo o vê como um canal de sensibilidade e mistério poético. O desafio consiste em erguer barreiras psíquicas firmes para não se perder nas dores alheias.</p>
+        </div>
+
+        <!-- ALDER (Alno) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/alno.jpg" alt="Árvore Alno" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Alno (Fearn) 🪵</h2>
+                    <div class="sign-date">Mar 18 a Abr 14</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Alno é a madeira dos guerreiros e dos desbravadores pioneiros celtas. Sua identidade solar é corajosa, impetuosa, cheia de iniciativa física e dona de uma autoconfiança contagiante. São líderes dinâmicos que avançam abrindo clareiras na floresta densa da matéria.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente ardente, direto e competitivo. O Alno não tolera joguinhos ou indecisões afetivas; ama e protege com paixão leal e assertiva. Sua segurança emocional está ligada à vitória de seus projetos e ao respeito absoluto à sua autonomia.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é infundir coragem nas massas e iniciar grandes cruzadas realizadoras. A sociedade o enxerga como uma força motriz apaixonada e protetora. O desafio evolutivo está em dominar a impaciência destrutiva e aprender a arte da diplomacia.</p>
+        </div>
+
+        <!-- WILLOW (Salgueiro) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/salgueiro.jpg" alt="Árvore Salgueiro" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Salgueiro (Saille) 🌿</h2>
+                    <div class="sign-date">Abr 15 a Mai 12</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Salgueiro cresce à beira d'água e é governado pelos ritmos secretos da Lua. Sua essência divina exala mistério insondável, magnetismo psíquico avassalador, inteligência estratégica silenciosa e uma memória ancestral extremamente afiada.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são viscerais, profundos e guardados a sete chaves. O Salgueiro possui flutuações de humor ligadas aos ciclos sutis da natureza. Nas dinâmicas afetivas, busca segurança total e lealdade indestrutível, possuindo um forte instinto protetor.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é desvelar segredos da mente humana por meio da sabedoria mística, da psicologia ou do ocultismo. O ambiente o reconhece como uma figura enigmática e dona de uma intuição profética. O desafio está em libertar mágoas do passado, evitando o rancor silencioso.</p>
+        </div>
+
+        <!-- HAWTHORN (Pilriteiro) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/pilriteiro.jpg" alt="Árvore Pilriteiro" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Pilriteiro (Huath) 🌳</h2>
+                    <div class="sign-date">Mai 13 a Jun 09</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Pilriteiro é a árvore dos mistérios das fadas, camuflando espinhos afiados sob flores belas e perfumadas. Sua identidade brilha em inteligência versátil, curiosidade intelectual insaciável, poder de comunicação carismática e uma adaptabilidade estratégica brilhante.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente mutável, leve e avesso à monotonia. O Pilriteiro processa sentimentos através do diálogo e da racionalização mental. Ele camufla suas dores íntimas sob uma fachada alegre e sociável, possuindo grande necessidade de estímulo intelectual constante.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como o elo de ligação, o comunicador e o estrategista das redes humanas. O mundo o percebe como uma mente brilhante, rápida e cheia de recursos. O desafio consiste em focar suas energias difusas, evitando a dispersão superficial.</p>
+        </div>
+
+        <!-- OAK (Carvalho) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/carvalho.jpg" alt="Árvore Carvalho" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Carvalho (Duir) 🌳</h2>
+                    <div class="sign-date">Jun 10 a Jul 07</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Carvalho é o rei supremo da floresta druídica, simbolizando a estabilidade absoluta, o heroísmo e a justiça nobre. Sua essência divina traz generosidade protetora, autoridade inata incomparável e uma resiliência titânica para sustentar o fardo das grandes causas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são sólidos, nobres e pautados em um código de honra familiar e comunitário rígido. O Carvalho encontra estabilidade emocional ao atuar como o pilar provedor de quem ama, detestando demonstrações públicas de fragilidade ou desespero.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é ancorar a verdade, proteger os fracos e construir legados indestrutíveis na matéria. A sociedade o enxerga como o líder natural e o mentor incorruptível. O aprendizado evolutivo reside em quebrar o orgulho, aceitando a própria vulnerabilidade.</p>
+        </div>
+
+        <!-- HOLLY (Azevinho) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/azevinho.jpg" alt="Árvore Azevinho" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Azevinho (Tinne) 🌿</h2>
+                    <div class="sign-date">Jul 08 a Ago 04</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Azevinho permanece verde e altivo durante todo o inverno, representando a liderança régia, a competitividade justa e a honra cavalheiresca. Sua identidade exala brio, determinação férrea e uma capacidade inata de gerenciar crises materiais complexas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente orgulhoso, magnânimo e intensamente protetor do seu círculo íntimo. O Azevinho reage com paixão e exige ser valorizado e respeitado por suas ações generosas. Ele vivencia mágoas nobres e busca sempre manter a fidalguia moral.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é reinar com justiça corporativa e social, organizando recursos para o progresso de todos. O mundo o percebe como um executor brilhante e imponente. O desafio consiste em suavizar o autoritarismo, escutando visões alheias sem julgamento.</p>
+        </div>
+
+        <!-- HAZEL (Avelã) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/avela.jpg" alt="Árvore Avelã" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Avelã (Coll) 🌳</h2>
+                    <div class="sign-date">Ago 05 a Set 01</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Avelã é a árvore do conhecimento puro, da sabedoria destilada, do intelecto acadêmico e da precisão analítica. Sua essência divina foca na organização meticulosa, no detalhismo cirúrgico e no domínio absoluto de dados e ciências práticas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são ultra-reservados, discretos e canalizados através da mente crítica. A Avelã busca ordem cênica e paz mental profunda; tensões ou grosserias quebram gravemente seu equilíbrio psíquico. Expressa afeto oferecendo suporte prático e preciso.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é catalogar o conhecimento útil, ensinar e trazer clareza estrutural e racionalidade ao mundo. O ambiente a reconhece como uma mente genial, reta e analítica. O aprendizado está em vencer o perfeccionismo ácido e paralisante.</p>
+        </div>
+
+        <!-- VINE (Videira) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/videira.jpg" alt="Árvore Videira" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Videira (Muin) 🍇</h2>
+                    <div class="sign-date">Set 02 a Set 29</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Videira colhe a essência do sol para criar o vinho sagrado, simbolizando a sofisticação estética, a alquimia das emoções e a sensibilidade artística superior. Sua identidade exala carisma social refinado, diplomacia impecável e paixão pelas artes.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Vibrante, intensamente romântico e dependente de harmonia ambiental absoluta. O fluxo emocional da Videira se desestabiliza severamente diante de injustiças ou discussões barulhentas. Ela busca o belo e o prazer sensorial sutil para nutrir seus afetos.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é pacificar ambientes cindidos e trazer refinamento artístico e conciliação diplomática à matéria. O mundo a enxerga como uma alma elegante, sedutora e poética. O desafio reside em desenvolver firmeza, superando a indecisão crônica.</p>
+        </div>
+
+        <!-- IVY (Hera) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/hera.jpg" alt="Planta Hera" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Hera (Gort) 🌿</h2>
+                    <div class="sign-date">Set 30 a Out 27</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Hera escala os muros mais altos e supera os obstáculos mais complexos através da adaptação contínua e de conexões profundas. Sua essência divina traz resiliência silenciosa fantástica, magnetismo intrigante e uma força de vontade inquebrável oculta sob suavidade.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente intensa, leal ao extremo e sutilmente possessiva. A Hera necessita criar raízes profundas em seus relacionamentos afetivos de alma. Ela gerencia crises com paciência milenar, mas teme severamente a traição e o abandono de seu clã.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é demonstrar o poder da adaptabilidade contínua e da superação espiritual diante de provações da matéria. A sociedade a vê como um ser firme, charmoso e enigmático. O desafio do seu Instinto Superior é não se anular ou sufocar o outro por apego.</p>
+        </div>
+
+        <!-- REED (Caniço) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/canico.jpg" alt="Planta Caniço" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Caniço (Ngetal) 🌾</h2>
+                    <div class="sign-date">Out 28 a Nov 24</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Caniço lança raízes profundas nas águas e era usado para fazer flechas e papiro, simbolizando o poder do jornalismo investigativo, do desvelar de verdades e do poder da fala cortante. Sua identidade exala poder, autoridade magnética e audácia investigativa extrema.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são profundos, vulcânicos e marcados por um desejo latente de controle e transformação. O Caniço capta os segredos mais íntimos de quem o cerca sem esforço. Ele ama com lealdade visceral absoluta, mas pode ser implacável quando se sente traído.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é expor mentiras e atuar como o cirurgião espiritual ou o detetive das sombras coletivas. O mundo o percebe como uma figura imponente, magnética e de respeito inquestionável. O desafio evolutivo está em transmutar o ciúme e a manipulação em pura cura de almas.</p>
+        </div>
+
+        <!-- ELDER (Sabugueiro) -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/sabugueiro.jpg" alt="Árvore Sabugueiro" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Sabugueiro (Ruis) 🌳</h2>
+                    <div class="sign-date">Nov 25 a Dez 23</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Sabugueiro fecha o ano celta carregando a energia dos anciãos, da sabedoria transcendental, da evolução espiritual livre e do desapego nobre. Sua essência divina é expansiva, aventureira, generosa e voltada para as grandes filosofias cósmicas existenciais.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente independente, otimista e avesso a rotinas ou cobranças mesquinhas. O Sabugueiro expressa seus afetos de forma expansiva e sincera. Sob estresse emocional, busca o movimento, viagens ou o recolhimento filosófico para limpar seu campo áurico.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é ensinar a humanidade a evoluir com fé e a desapegar das ilusões materiais obsoletas. O ambiente o reconhece como um espírito livre, sábio e motivador. O desafio de alma consiste em desenvolver foco e estabilidade prática, honrando compromissos.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
