@@ -45,24 +45,15 @@
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="midia.html">Vídeos</a>
-            <a href="numerologia.html" style="color: #fff; text-shadow: 0 0 10px #c9a227;">Numerologia</a>
-            <a href="esoterismo.html">Espiritualidade</a>
-        </nav>
-    </header>
-
-    <div class="menu-ferramentas">
-        <button class="btn-nav active" onclick="mostrar('karma')">Ciência do Karma</button>
-        <button class="btn-nav" onclick="mostrar('amor')">Sinergia do Amor</button>
-        <button class="btn-nav" onclick="mostrar('dicionario')">Dicionário 1-99</button>
-        <button class="btn-nav" onclick="mostrar('gematria')">Gematria Cabalística</button>
-        <button class="btn-nav" onclick="mostrar('analista')">O Analista</button>
-        <button class="btn-nav" onclick="mostrar('calculos')">Matemática e Origem</button>
-    </div>
+<div class="menu-ferramentas-premium">
+    <button class="btn-premium ativo" onclick="alternarFerramenta('secao-analista')">🧠 O Analista</button>
+    <button class="btn-premium" onclick="alternarFerramenta('secao-calculos')">📊 Engenharia dos Cálculos</button>
+    <!-- Os próximos botões você só ativa quando colar os outros blocos abaixo:
+    <button class="btn-premium" onclick="alternarFerramenta('secao-karma')">🧬 Ciência do Karma</button>
+    <button class="btn-premium" onclick="alternarFerramenta('secao-amor')">❤️ Sinergia do Amor</button>
+    <button class="btn-premium" onclick="alternarFerramenta('secao-gematria')">📜 Gematria Cabalística</button>
+    -->
+</div>
 
 <div id="secao-analista">
     <style>
