@@ -18,18 +18,53 @@
             background: radial-gradient(circle at top right, #1e293b, #020617);
             color: var(--text);
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* CORREÇÃO: Garante o fluxo vertical (Header no topo, Quiz abaixo) */
             align-items: center;
             min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
         }
 
+        /* CORREÇÃO DO HEADER: Largura total e fixado no topo */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid #c9a44c;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: #c9a44c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: #ffd633;
+        }
+
+        /* Espaçador para o Quiz centralizar sem colidir com o topo */
         .quiz-wrapper {
             width: 100%;
             max-width: 600px;
-            padding: 20px;
+            padding: 40px 20px;
             z-index: 10;
+            margin: auto 0; /* Centralização vertical inteligente */
         }
 
         .card {
@@ -135,21 +170,17 @@
     </style>
 </head>
 <body>
- <div>
+
 <header>
     <nav>
-      
-            <a href="index.html">Início & Histórias</a>
-           <a href="quiz.html">Quiz</a>
-            <a href="midia.html">Vídeos & Músicas</a>
-            <a href="numerologia.html">Numerologia</a>
-           <a href="esoterismo.html">Espiritualidade</a>
-            <a href="astrologia.html">Astrologia & Oráculos</a>
-    
+        <a href="index.html">Início & Histórias</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="midia.html">Vídeos & Músicas</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia & Oráculos</a>
     </nav>
 </header>
-
-     </div>
 
 <div class="quiz-wrapper">
     <div class="card" id="quiz-card">
@@ -212,7 +243,7 @@ const questions = [
         img: "https://images.unsplash.com/photo-1518112166137-85909459273c?auto=format&fit=crop&q=80&w=500",
         options: [
             { t: "Parece que há um bloqueio no meu coração", p: { amor: 3 } },
-            { t: "Altos e baixos que me deixam inseguro(a)", p: { futuro: 3 } },
+            { t: "Altos e baixos que me deixam insecure(a)", p: { futuro: 3 } },
             { t: "Sinto-me estagnado(a), sem força vital", p: { energia: 3 } },
             { t: "Quero entender o gráfico completo da minha sorte", p: { futuro: 1, combo: 2 } }
         ]
