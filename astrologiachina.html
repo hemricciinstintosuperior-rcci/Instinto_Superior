@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Chinesa - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 3em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html" style="color: var(--primary);">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>A RODA DOS ANIMAIS SAGRADOS E DOS CINCO ELEMENTOS DAMATRIZ ORIENTAL</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Chinesa</h1>
+        <p>A Astrologia Chinesa baseia-se nos ciclos lunares de 12 anos, onde cada ano é regido por uma das criaturas cósmicas que responderam ao chamado de Buda. Conectado profundamente ao Yin e Yang e aos cinco elementos (Madeira, Fogo, Terra, Metal e Água), este sistema traduz as engrenagens ocultas da sua **Energia Divina (Sol)**, do seu **Fluxo Emocional (Lua)** e da sua **Missão de Alma (Ascendente)**.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <!-- RATO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/rato.jpg" alt="Rato Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Rato (Zi) 🐀</h2>
+                    <div class="sign-date">Anos: 1948, 1960, 1972, 1984, 1996, 2008, 2020</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Rato abre o ciclo do zodíaco chinês, trazendo o arquétipo do estrategista agudo, do pioneiro e do sobrevivente nato. Sua identidade brilha por uma astúcia intelectual fora do comum, charme magnético e uma versatilidade absurda para transformar escassez em grande riqueza material.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente, o Rato é intensamente ligado à segurança de seu clã e de seus recursos. Ele mascara suas ansiedades por meio da ação constante e de uma fachada extremamente sociável. Sob estresse, tende a se tornar calculista ou excessivamente protetor de sua privacidade.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é abrir caminhos e criar soluções onde outros enxergam barreiras intransponíveis. O mundo o percebe como um observador perspicaz e realizador. O desafio de alma do seu Instinto Superior é transmutar a ambição puramente defensiva em generosidade e cooperação comunitária.</p>
+        </div>
+
+        <!-- BOI -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/boi.jpg" alt="Boi Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Boi (Chou) 🐂</h2>
+                    <div class="sign-date">Anos: 1949, 1961, 1973, 1985, 1997, 2009, 2021</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Boi personifica o pilar da fundação e o império edificado com persistência inflexível. Sua essência divina exala estabilidade, honestidade brutal, dever e uma força silenciosa que não verga diante de nenhuma crise ou tempestade material.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são estáveis, profundos e processados em absoluto silêncio. O Boi raramente explode, mas acumula pressões emocionais por longos períodos. Ele encontra sua zona de segurança afetiva na lealdade inabalável de seus pares e em rotinas sólidas e previsíveis.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é estruturar e dar teto seguro às ideias do mundo através do trabalho estratégico. O ambiente o enxerga como uma rocha de integridade absoluta. O aprendizado evolutivo está em quebrar o orgulho e abrir a mente para a flexibilidade de novas dinâmicas espirituais.</p>
+        </div>
+
+        <!-- TIGRE -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/tigre.jpg" alt="Tigre Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Tigre (Yin) 🐅</h2>
+                    <div class="sign-date">Anos: 1950, 1962, 1974, 1986, 1998, 2010, 2022</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Tigre é o guerreiro magnético, dinâmico e imprevisível. Sua identidade solar vibra em coragem crua, liderança revolucionária e uma urgência em combater injustiças. Não conhece o medo do fracasso e avança com um brilho apaixonado e intimidador.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">As emoções do Tigre são vulcânicas, ardentes e flutuam intensamente. Ele vive as dinâmicas de afeto no limite e não tolera rédeas ou submissão social. Sente-se seguro quando sua autonomia selvagem é profundamente respeitada por quem o cerca.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é quebrar paradigmas arcaicos e despertar a coragem coletiva. A sociedade o reconhece como uma força irresistível e inspiradora. Seu desafio estratégico é dominar a impulsividade destrutiva, convertendo-a em foco disciplinado.</p>
+        </div>
+
+        <!-- COELHO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/coelho_chines.jpg" alt="Coelho Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Coelho (Mao) 🐇</h2>
+                    <div class="sign-date">Anos: 1951, 1963, 1975, 1987, 1999, 2011, 2023</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Coelho (ou Lebre) traz o dom da diplomacia refinada, da inteligência estética e da sensibilidade aguçada. É a essência do pacificador estratégico, que prefere vencer batalhas por meio da persuasão silenciosa e de manobras inteligentes, evitando confrontos diretos inúteis.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seu fluxo emocional exige paz absoluta e harmonia cênica. O Coelho absorve as tensões do ambiente com facilidade, o que pode levá-lo ao isolamento defensivo ou ao escapismo. Ele encontra conforto e recarga energética no refúgio estético do lar.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é curar fissuras sociais e trazer harmonia e beleza ao caos mundano. O mundo o vê como um porto seguro de sabedoria e acolhimento refinado. O aprendizado evolutivo é desenvolver coragem para enfrentar conflitos reais quando necessário.</p>
+        </div>
+
+        <!-- DRAGÃO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/dragao.jpg" alt="Dragão Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Dragão (Chen) 🐉</h2>
+                    <div class="sign-date">Anos: 1952, 1964, 1976, 1988, 2000, 2012, 2024</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Dragão é a única criatura mitológica do zodíaco, simbolizando o poder imperial supremo, o magnetismo avassalador e a sorte cósmica. Sua identidade divina é majestosa, excêntrica, cheia de vitalidade criativa e impulsionada por grandes ambições realizadoras.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente orgulhoso e intensamente apaixonado, o Dragão não aceita papéis de coadjuvante nas dinâmicas de afeto. Suas reações são grandiosas e ele se magoa profundamente se seu valor não for publicamente reverenciado. Possui um coração imensamente generoso.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é inspirar a humanidade a mirar o impossível e realizar milagres na matéria. A sociedade o enxerga como uma figura cativante e de liderança inquestionável. Seu desafio consiste em suavizar a prepotência, integrando a empatia real ao seu cetro de comando.</p>
+        </div>
+
+        <!-- SERPENTE -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/serpente_chinesa.jpg" alt="Serpente Chinesa" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Serpente (Si) 🐍</h2>
+                    <div class="sign-date">Anos: 1953, 1965, 1977, 1989, 2001, 2013, 2025</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Serpente representa a profunda sabedoria mística, o intelecto analítico e o mistério insondável do oriente. Sua identidade exala um magnetismo silencioso, intuição psíquica apurada, elegância e um faro cirúrgico para oportunidades financeiras e intelectuais.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são recônditos, intensos e marcados por um forte senso de posse e privacidade absoluta. A Serpente raramente expõe suas cartas emocionais; ela observa tudo em silêncio. Há um medo profundo de rejeição que a faz manter barreiras estratégicas elevadas.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é desvelar verdades ocultas por meio da filosofia superior e da investigação mental profunda. O ambiente a reconhece como alguém enigmático e detentor de conhecimentos secretos. O desafio do seu Instinto Superior é abrir mão do controle desconfiado e fluir na fé.</p>
+        </div>
+
+        <!-- CAVALO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/cavalo.jpg" alt="Cavalo Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Cavalo (Wu) 🐎</h2>
+                    <div class="sign-date">Anos: 1954, 1966, 1978, 1990, 2002, 2014, 2026</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Cavalo vibra na frequência da liberdade indomável, do dinamismo físico e mental e do entusiasmo contagiante. Sua essência divina é expansiva, comunicativa, ágil para viajar e desbravar horizontes novos e dotada de um magnetismo social exuberante.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente impulsivo e impaciente, o Cavalo detesta amarras psicológicas ou cobranças sufocantes. Seus sentimentos são intensos, mas podem mudar com a velocidade do vento se ele se sentir minimamente encurralado na sua independência afetiva.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é movimentar a energia estagnada do mundo, promovendo evolução através da ação e da comunicação direta. O mundo o vê como um líder veloz e motivador. O aprendizado evolutivo consiste em desenvolver raízes firmes e terminar o que começou.</p>
+        </div>
+
+        <!-- CABRA -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/cabra.jpg" alt="Cabra Chinesa" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Cabra (Wei) 🐐</h2>
+                    <div class="sign-date">Anos: 1955, 1967, 1979, 1991, 2003, 2015, 2027</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A Cabra (ou Carneiro) personifica a pureza artística, o refinamento da alma, a empatia real e a conexão mística com a natureza. Sua essência divina foca na doçura construtiva, possuindo uma força interna sutil que dobra os corações mais rígidos através da arte e do afeto.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seu fluxo emocional é imenso, ultra-sensível e melancólico por natureza. A Cabra necessita de suporte protetor e demonstrações de carinho explícitas. Ela se abala profundamente com críticas duras ou ambientes frios, buscando sempre abrigo nos vínculos íntimos.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é semear sensibilidade artística, cura emocional e bondade em uma sociedade endurecida. O mundo a enxerga como uma alma criativa, poética e acolhedora. O desafio está em blindar a autoconfiança para não se perder em vitimismo ou dependência.</p>
+        </div>
+
+        <!-- MACACO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/macaco_chines.jpg" alt="Macaco Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Macaco (Shen) 🐒</h2>
+                    <div class="sign-date">Anos: 1956, 1968, 1980, 1992, 2004, 2016, 2028</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Macaco oriental é o gênio inventivo, o mago da flexibilidade mental e o estrategista divertido. Sua identidade brilha em inteligência genial, rapidez para solucionar charadas materiais complexas e uma maestria ímpar para negociar e conduzir grupos humanos.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente desapegado e puramente cerebral. O Macaco decodifica os sentimentos através da lógica de causa e efeito. Ele evita se afundar em dramas emocionais densos, usando o humor inteligente ou o foco no trabalho prático como válvulas de escape.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é quebrar a seriedade e trazer inovação tecnológica e mental para a civilização. O ambiente o reconhece como uma mente brilhante e imprevisível. O desafio de crescimento consiste em usar seu intelecto para a verdade, superando o vício da manipulação.</p>
+        </div>
+
+        <!-- GALO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/galo.jpg" alt="Galo Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Galo (You) 🐓</h2>
+                    <div class="sign-date">Anos: 1957, 1969, 1981, 1993, 2005, 2017, 2029</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Galo representa o arauto da alvorada, o mestre da organização meticulosa, do perfeccionismo e do brio individual. Sua essência divina exala franqueza cortante, senso de dever impecável, autoconfiança estética e precisão cirúrgica em suas análises.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são orgulhosos, retos e protegidos por uma carapaça de impecabilidade crítica. O Galo sofre quando seus esforços meticulosos de organização não são valorizados. Ele expressa amor fornecendo proteção prática e conselhos corretivos.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é instaurar a ordem, a eficiência administrativa e a verdade límpida nos ambientes. O mundo o percebe como um profissional brilhante e reto. O desafio do seu Instinto Superior é temperar o criticismo ácido com a doçura da tolerância real.</p>
+        </div>
+
+        <!-- CÃO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/cao_chines.jpg" alt="Cão Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Cão (Xu) 🐕</h2>
+                    <div class="sign-date">Anos: 1958, 1970, 1982, 1994, 2006, 2018, 2030</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Cão oriental é o guardião supremo dos valores humanitários, da ética e da integridade moral inabalável. Sua identidade brilha por um senso de justiça implacável, lealdade eterna e uma coragem heroica para defender desamparados e princípios nobres.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente vigilante e inclinado ao ceticismo defensivo. O Cão demora a confiar plenamente, mas, quando cria um vínculo de alma, este é indestrutível. Ele necessita de estabilidade moral e transparência absoluta de seus companheiros para acalmar sua mente.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é proteger a integridade do coletivo e erguer templos de lealdade e justiça social. O mundo o enxerga como o conselheiro mais confiável. O aprendizado evolutivo reside em vencer a tendência ao pessimismo crônico ou a julgamentos fechados.</p>
+        </div>
+
+        <!-- PORCO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/porco.jpg" alt="Porco Chinês" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Porco (Hai) 🐖</h2>
+                    <div class="sign-date">Anos: 1959, 1971, 1983, 1995, 2007, 2019, 2031</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Porco (ou Javali) fecha o ciclo zodiacal trazendo o arquétipo da generosidade pacífica, da fidalguia moral e da abundância plena de espírito. Sua identidade exala bondade real, resiliência nobre e um talento inato para usufruir da beleza e do conforto da matéria.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Suas emoções são calorosas, profundas, ingênuas e imensamente românticas. O Porco crê na bondade inerente das pessoas, o que pode torná-lo alvo de exploração. Ele gerencia as dores perdoando com facilidade e buscando restaurar a paz coletiva a qualquer custo.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é consolidar a paz, a fartura e a fraternidade real entre os homens. A sociedade o reconhece como uma alma nobre, generosa e pacífica. O desafio de alma é erguer barreiras de discernimento firme para proteger o seu grande coração da malícia alheia.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
