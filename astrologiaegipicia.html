@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Egípcia - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 3em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html" style="color: var(--primary);">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>A CHAVE DAS DIVINDADES AO LONGO DO NILO</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Egípcia</h1>
+        <p>A Astrologia Egípcia baseia-se nos ciclos da natureza e na proteção dos grandes deuses do Egito Antigo. Diferente do zodíaco ocidental, seus signos distribuem-se em períodos intercalados do ano. Cada divindade governa sua essência interna, seus mistérios ocultos e a missão de poder que o seu Instinto Superior herdou do misticismo do Rio Nilo.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <!-- NILO -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/nilo.jpg" alt="O Nilo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>O Nilo 🌊</h2>
+                    <div class="sign-date">Jan 1-7, Jun 19-21, Set 1-7, Nov 18-26</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">O Nilo representa o único signo não personificado por um Deus, simbolizando a fonte suprema de vida e fertilidade. Aqueles que nascem sob esta energia possuem uma identidade vitalizadora, adaptável e cheia de recursos. São os provedores naturais de harmonia, capazes de fertilizar ideias e trazer abundância para projetos e ambientes em que tocam.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">As emoções sob o signo do Nilo são profundas e altamente mutáveis, fluindo como correntes de água. Há uma necessidade latente de manter a paz e evitar conflitos destrutivos. Quando sob pressão, tendem a reter sentimentos até que as margens transbordem em reações emocionais intensas, mas purificadoras.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como pacificador e condutor de energia. O mundo enxerga você como uma fonte de cura e paciência. Deve aprender a direcionar seu enorme fluxo criativo sem se dispersar, mantendo o foco firme em nutrir a própria evolução e a daqueles ao seu redor.</p>
+        </div>
+
+        <!-- AMON-RÁ -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/amon-ra.jpg" alt="Amon-Rá" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Amon-Rá ☀️</h2>
+                    <div class="sign-date">Jan 8-21, Fev 1-11</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Amon-Rá é o Deus do Sol e da criação. Quem nasce sob este arquétipo traz o brilho do monarca e do líder nato. É uma essência imponente, confiante e dotada de uma coragem natural para tomar decisões difíceis. Há um desejo inato de comandar e estruturar a realidade, banhando a todos com generosidade e integridade.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente, Amon-Rá detesta a fraqueza e a indecisão. Seus sentimentos são orgulhosos e expressados com clareza cristalina. A segurança interna provém da admiração e do respeito que recebe. No entanto, sua natureza solar pode queimar em momentos de ira se sua autoridade for abertamente questionada.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é inspirar e guiar com justiça. A imagem projetada é a do mestre corajoso e protetor. O desafio evolutivo consiste em dominar o ego, garantindo que o seu poder seja direcionado à iluminação espiritual e ao bem-estar coletivo, sem cair no autoritarismo.</p>
+        </div>
+
+        <!-- MUTA -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/muta.jpg" alt="Muta" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Muta 𓁐</h2>
+                    <div class="sign-date">Jan 22-31, Set 8-22</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Muta representa a Deusa Mãe e a protetora da humanidade. A essência deste signo foca no senso de dever, dedicação e na defesa intransigente de princípios e de pessoas vulneráveis. São indivíduos discretos, mas incrivelmente determinados e estruturados internamente.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">As emoções são resguardadas sob uma carapaça de timidez ou seriedade. O nativo de Muta busca vínculos profundos, fiéis e duradouros, sentindo uma necessidade visceral de proteger quem ama. Tende a acumular dores secretas devido ao medo de se vulnerabilizar.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é trazer ordem e cuidado estruturado ao caos do mundo. Transmite a imagem de alguém sólido, confiável e ponderado. O aprendizado evolutivo está em externalizar a sua imensa sensibilidade, permitindo-se receber o mesmo afeto que distribui.</p>
+        </div>
+
+        <!-- THOTH -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/thoth.jpg" alt="Thoth" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Thoth 𓁟</h2>
+                    <div class="sign-date">Abr 1-19, Nov 8-17</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Thoth é o Deus da sabedoria, da escrita e do conhecimento oculto. A identidade deste signo é puramente mental, analítica e voltada para a solução de grandes mistérios. Possui uma mente investigativa capaz de aprender com velocidade espantosa e organizar dados complexos com extrema facilidade.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Há uma forte tendência a racionalizar os sentimentos. A estabilidade emocional de Thoth está atrelada à compreensão lógica das situações. Busca interações baseadas na afinidade intelectual, e ambientes barulhentos ou desorganizados geram ansiedade em seu campo intuitivo.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é expandir a consciência através do conhecimento e do ensino. É percebido como uma autoridade mental ou um conselheiro sagaz. O caminho de crescimento pede para unir a frieza da lógica matemática com a intuição mística do coração.</p>
+        </div>
+
+        <!-- HÓRUS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/horus.jpg" alt="Hórus" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Hórus 𓅓</h2>
+                    <div class="sign-date">Abr 20 a Mai 7, Ago 12-19</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Hórus, o Deus Falcão, representa a vitória, o foco inflexível e a justiça celestial. Nascidos sob este signo brilham através da resiliência e de uma força de vontade titânica. Têm o olhar treinado para enxergar longe, traçando metas ambiciosas com grande espírito de competição e coragem.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">As emoções de Hórus são ardentes e impacientes. Existe um profundo senso de justiça individual, o que torna o nativo intolerante a traições e desonestidades. Prefere travar batalhas diretas a vivenciar ressentimentos velados, buscando sempre a clareza.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é conquistar e materializar ideais nobres. O mundo o reconhece como um guerreiro destemido e realizador. O desafio do seu Instinto Superior é canalizar a impetuosidade e a agressividade natas em liderança estratégica e construtiva.</p>
+        </div>
+
+        <!-- ANÚBIS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/anubis.jpg" alt="Anúbis" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Anúbis 𓃣</h2>
+                    <div class="sign-date">Mai 8-27, Jun 29 a Jul 13</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Anúbis é o Guardião do submundo e dos mistérios pós-morte. Quem pertence a este arquétipo possui um magnetismo profundo, reservado e misterioso. É a essência do psicólogo e do investigador, que não teme as sombras e sabe transitar por crises com extraordinária maestria.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Suas emoções são guardadas sob sete chaves. Possui uma sensibilidade psíquica apurada, captando mentiras e segredos no ar. A segurança emocional de Anúbis reside na privacidade absoluta de seu lar e no controle estratégico de sua própria vida.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como transformador e regenerador de estruturas. Transmite a imagem de um guardião silencioso e enigmático. Deve aprender a usar sua percepção afiada para curar dores profundas, superando o instinto de isolamento defensivo.</p>
+        </div>
+
+        <!-- OSÍRIS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/osiris.jpg" alt="Osíris" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Osíris 𓁃</h2>
+                    <div class="sign-date">Mai 28 a Jun 18, Nov 27 a Dez 18</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Osíris é o Deus da renovação, da agricultura e do renascimento. A essência deste signo carrega a força da fênix: a capacidade de se reerguer após grandes perdas. Possui uma inteligência magnética, visão de longo prazo e uma profunda conexão espiritual.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos oscilam entre a paixão intensa e o desapego filosófico. É um signo de altos e baixos emocionais, mas dotado de uma resiliência espiritual única. Sente a necessidade constante de se reinventar em suas dinâmicas afetivas.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é ensinar a arte do renascimento e da resiliência ao mundo. A imagem externa é de estabilidade, sabedoria e superação. O aprendizado envolve aceitar os encerramentos naturais da vida como adubo para novos começos.</p>
+        </div>
+
+        <!-- ÍSIS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/isis.jpg" alt="Ísis" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Ísis 𓁐</h2>
+                    <div class="sign-date">Mar 11-31, Out 18-29, Dez 19-31</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Ísis é a Deusa da magia, da maternidade e do poder supremo do amor. Quem carrega este arquétipo brilha através de um carisma avassalador, empatia real e uma determinação doce, porém inabalável. Possui dons naturais para proteger a vida e solucionar problemas complexos de forma mágica.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Suas emoções são imensas, acolhedoras e nobres. Ísis ama sem reservas, mas exige reciprocidade moral e lealdade absoluta. Sente-se segura em ambientes onde o afeto e a harmonia familiar são cultivados com respeito mútuo e carinho constante.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é curar e unir as pessoas através da compaixão ativa. É vista como uma alma iluminada, acolhedora e sábia. O desafio do seu Instinto Superior é não se anular nas dores do outro, estabelecendo limites saudáveis em suas relações.</p>
+        </div>
+
+        <!-- TOT / SEKHMET -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/sekhmet.jpg" alt="Sekhmet" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Sekhmet 𓁐</h2>
+                    <div class="sign-date">Jul 29 a Ago 11, Out 30 a Nov 7</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Sekhmet é a Deusa Leoa da guerra, da destruição necessária e da cura física. A identidade deste signo é magnética, impulsiva e dotada de uma força física e mental incomum. Não tolera injustiças e possui a capacidade de cortar o mal pela raiz sem hesitação.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Suas emoções são vulcânicas e intensas. Sekhmet reage com agressividade a provocações ou tentativas de manipulação. A segurança interna decorre do respeito à sua autonomia individual e orgulho. Por trás da fúria protetora, esconde um coração imensamente leal.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é purificar ambientes de energias estagnadas ou corruptas. Transmite a imagem de força majestosa e autoridade incontestável. Seu caminho evolutivo pede a domesticação da sua ira, transformando-a em energia de cura e proteção.</p>
+        </div>
+
+        <!-- SETH -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/seth.jpg" alt="Seth" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Seth 𓃩</h2>
+                    <div class="sign-date">Mai 28 a Jun 18, Set 29 a Out 17</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Seth é o Deus do caos, das tempestades e da quebra de barreiras. Quem nasce sob este signo possui uma mente inconformista, revolucionária e ambiciosa. Brilha através do poder da palavra, da quebra de tradições arcaicas e da busca incansável pela superação dos próprios limites.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente instável e inquieto, Seth necessita de novidades e desafios constantes para não se sentir sufocado. Tende a canalizar descontentamentos em ambição prática ou crises de impaciência. Detesta a calmaria excessiva e a estagnação rotineira.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como agente de mudança no mundo, destruindo velhas estruturas para dar espaço ao novo. Transmite a imagem do rebelde estratégico e dinâmico. O desafio consiste em focar a sua força disruptiva na construção de uma nova ordem justa.</p>
+        </div>
+
+        <!-- BASTET -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/bastet.jpg" alt="Bastet" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Bastet 𓁐</h2>
+                    <div class="sign-date">Jul 14-28, Set 23-27, Out 3-17</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Bastet é a Deusa Gata do prazer, da proteção e da intuição felina. Quem nasce sob esta regência esbanja charme, agilidade mental e uma forte veia artística. Possui um faro aguçado para captar o perigo antes que ele se aproxime, navegando na vida com extrema leveza e diplomacia.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Suas emoções buscam a doçura, o aconchego e a harmonia nas interações sociais. Detesta a agressividade gratuita ou conflitos estridentes. Sente a necessidade de se resguardar em seu próprio espaço de tranquilidade física toda vez que o ambiente externo se torna hostil.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é espalhar harmonia, beleza e alegria de viver através da criatividade refinada. É vista como uma alma agradável, diplomata e magnética. O desafio do seu Instinto Superior é desenvolver firmeza para dizer 'não' quando necessário, evitando o escapismo emocional.</p>
+        </div>
+
+        <!-- QUENOUM -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/quenoum.jpg" alt="Quenoum" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Quenoum 𓁡</h2>
+                    <div class="sign-date">Jul 7-18, Dez 16-25</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Quenoum é o Deus Oleiro que moldou a humanidade no barro. Quem nasce sob essa regência traz uma força mental pragmática, construtiva e voltada ao aperfeiçoamento material da vida. É o mestre dos detalhes, possuindo paciência e foco raros para edificar carreiras e estruturas sólidas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente reservado, estável e realista. Quenoum expressa sentimentos através do suporte prático, da responsabilidade cotidiana e da proteção física de seus entes queridos. Ansiedades e medos são gerenciados por meio da imersão em rotinas eficientes e no trabalho.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é dar forma material a grandes ideais espirituais. A imagem projetada é de seriedade, constância e alta confiabilidade. O caminho de crescimento pede para não se fechar ao fluxo dinâmico e imprevisto do universo, integrando flexibilidade mental à sua fundação de pedra.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
