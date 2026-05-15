@@ -3,196 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Vídeos - Instinto Superior</title>
+    <title>Portal Instinto Superior | Análise Vibracional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Georgia', serif; background-color: #050505; color: #f0f0f0; margin: 0; padding: 0; }
-        header { background: #000; padding: 40px; text-align: center; border-bottom: 3px solid #d4af37; }
-        .logo { color: #d4af37; font-size: 2em; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
+        :root {
+            --primary: #ffd633;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text: #f8fafc;
         }
 
-        .video-card {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 15px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #020617);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .quiz-wrapper {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 51, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .progress-container {
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(51, 65, 85, 0.5);
+            border-radius: 10px;
             overflow: hidden;
-            transition: 0.3s;
         }
-        .video-card:hover { border-color: #d4af37; transform: translateY(-5px); }
 
-        /* Container para manter a proporção 16:9 do YouTube */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        .progress-fill {
             height: 100%;
-            border: 0;
+            background: linear-gradient(90deg, #eab308, #ffd633);
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .video-info { padding: 20px; text-align: center; }
-        .video-info h3 { color: #d4af37; margin: 0 0 10px 0; text-transform: uppercase; font-size: 1.1em; }
-        .video-info p { color: #888; font-size: 0.9em; margin: 0; }
+        .img-pergunta {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 214, 51, 0.2);
+        }
 
-        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; }
-      
-      
- @media (max-width: 768px) {
-    /* Ajusta o container principal */
-    .zodiac-container, .video-grid {
-        padding: 10px;
-        gap: 20px;
-    }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
 
-    /* Faz os cards ocuparem a tela toda sem sobrar espaço */
-    .sign-card, .video-card {
-        width: 100% !important;
-        padding: 15px !important;
-        margin: 0 auto;
-    }
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
 
-    /* Ajusta a imagem da armadura para não ficar gigante no celular */
-    .armor-box {
-        width: 100% !important;
-        height: auto !important;
-        min-height: 200px;
-    }
+        .btn-option {
+            background: rgba(51, 65, 85, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 18px 24px;
+            border-radius: 14px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
 
-    /* Diminui os títulos para caberem em uma linha */
-    .sign-title h2 {
-        font-size: 1.8em !important;
-    }
-}     
-      
-      
+        .btn-option:hover {
+            background: rgba(255, 214, 51, 0.15);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Telas Especiais */
+        #loading, #result { display: none; }
+
+        .loader {
+            border: 4px solid rgba(255, 214, 51, 0.1);
+            border-left-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .result-title { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
+        
+        .final-cta {
+            background: var(--primary);
+            color: #000;
+            padding: 20px 30px;
+            border-radius: 14px;
+            display: inline-block;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 25px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 214, 51, 0.4); }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Instinto Superior</div>
-        <p style="color: #888;">CONTEÚDO EXCLUSIVO EM VÍDEO</p>
-    </header>
+<header>
+    <nav>
+      
+            <a href="index.html">Início & Histórias</a>
+           <a href="quiz.html">Quiz</a>
+            <a href="midia.html">Vídeos & Músicas</a>
+            <a href="numerologia.html">Numerologia</a>
+           <a href="esoterismo.html">Espiritualidade</a>
+            <a href="astrologia.html">Astrologia & Oráculos</a>
+    
+    </nav>
+</header>
 
-    <div class="video-grid">
-        
-        <!-- VÍDEO 01 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/jfbf1L5Bbho" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>A Matriz Quântica</h3>
-                <p>A Sinfonia do Destino</p>
-            </div>
+    
+
+<div class="quiz-wrapper">
+    <div class="card" id="quiz-card">
+        <div class="progress-container">
+            <div class="progress-bar"><div class="progress-fill" id="bar"></div></div>
         </div>
 
-        <!-- VÍDEO 02 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/tfCrFGUnibI" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Estudo Numerológico</h3>
-                <p>Seu Perfil de comportamento e Caminho de Vida</p>
-            </div>
+        <div id="question-area">
+            <!-- Renderizado via JS -->
         </div>
 
-        <!-- VÍDEO 03 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/k375lfJCLcA" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Planos de Expressão</h3>
-                <p>O Mapa dos 100 anos</p>
-            </div>
+        <div id="loading">
+            <div class="loader"></div>
+            <h3>Processando sua Matriz Quântica...</h3>
+            <p>Aguarde enquanto os ciclos de 100 anos estão sendo calculados.</p>
         </div>
 
-        <!-- VÍDEO 04 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/WV02bqCCd5w" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Tutorial Matriz</h3>
-                <p>Como acessar o Portal</p>
-            </div>
+        <div id="result">
+            <h2 class="result-title" id="res-title"></h2>
+            <p id="res-desc"></p>
+            <a href="#" id="res-link" class="final-cta">Ver Minha Análise Completa</a>
         </div>
-
-        <!-- VÍDEO 05 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/tLrR4tsM4as" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Tutorial Planos</h3>
-                <p>Como acessar o Portal</p>
-            </div>
-        </div>
-
-        <!-- VÍDEO 06 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO_06" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Título do Vídeo 06</h3>
-                <p>Breve descrição sobre o conteúdo deste vídeo.</p>
-            </div>
-        </div>
-
-        <!-- VÍDEO 07 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO_07" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Título do Vídeo 07</h3>
-                <p>Breve descrição sobre o conteúdo deste vídeo.</p>
-            </div>
-        </div>
-
-        <!-- VÍDEO 08 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO_08" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Título do Vídeo 08</h3>
-                <p>Breve descrição sobre o conteúdo deste vídeo.</p>
-            </div>
-        </div>
-
-        <!-- VÍDEO 09 -->
-        <div class="video-card">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO_09" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-                <h3>Título do Vídeo 09</h3>
-                <p>Breve descrição sobre o conteúdo deste vídeo.</p>
-            </div>
-        </div>
-
     </div>
+</div>
 
-    <footer>
-        &copy; 2026 Instinto Superior - Todos os direitos reservados.
-    </footer>
+<script>
+const questions = [
+    {
+        q: "Se sua vida fosse um livro hoje, qual seria o título do capítulo atual?",
+        img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Corações à deriva (Busco paz no amor)", p: { amor: 3 } },
+            { t: "O labirinto do amanhã (Insegurança no futuro)", p: { futuro: 3 } },
+            { t: "Bateria fraca (Falta de energia e foco)", p: { energia: 3 } },
+            { t: "Em busca da peça que falta (Autoconhecimento)", p: { auto: 2, combo: 1 } }
+        ]
+    },
+    {
+        q: "O que mais te drena energeticamente durante o dia?",
+        img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Brigas e mal-entendidos afetivos", p: { amor: 3 } },
+            { t: "Medo de não prosperar financeiramente", p: { futuro: 2, auto: 1 } },
+            { t: "Procrastinação e confusão mental", p: { energia: 3 } },
+            { t: "Sinto que vivo um destino que não é meu", p: { auto: 3, combo: 1 } }
+        ]
+    },
+    {
+        q: "Qual desses 'chamados' você sente com mais força agora?",
+        img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Encontrar um amor verdadeiro ou salvar o atual", p: { amor: 3 } },
+            { t: "Saber a hora certa de agir e investir", p: { futuro: 3 } },
+            { t: "Alinhar minha mente com meu propósito", p: { energia: 2, auto: 1 } },
+            { t: "Dominar todos os códigos do meu nome", p: { combo: 3 } }
+        ]
+    },
+    {
+        q: "Como você descreveria sua sorte nos últimos meses?",
+        img: "https://images.unsplash.com/photo-1518112166137-85909459273c?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Parece que há um bloqueio no meu coração", p: { amor: 3 } },
+            { t: "Altos e baixos que me deixam inseguro(a)", p: { futuro: 3 } },
+            { t: "Sinto-me estagnado(a), sem força vital", p: { energia: 3 } },
+            { t: "Quero entender o gráfico completo da minha sorte", p: { futuro: 1, combo: 2 } }
+        ]
+    },
+    {
+        q: "Ao analisar sua trajetória, qual ciclo parece se repetir?",
+        img: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Sempre atraio o mesmo tipo de pessoa", p: { amor: 3 } },
+            { t: "As oportunidades chegam, mas escapam no fim", p: { futuro: 3 } },
+            { t: "Começo projetos e perco o entusiasmo logo", p: { energia: 3 } },
+            { t: "Quero quebrar todos os padrões limitantes", p: { combo: 3 } }
+        ]
+    },
+    {
+        q: "Qual dessas ferramentas você sente que mudaria seu jogo hoje?",
+        img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Um guia para harmonizar meu relacionamento", p: { amor: 3 } },
+            { t: "Um mapa de previsões para os próximos anos", p: { futuro: 3, energia: 3 } },
+            { t: "Um diagnóstico da minha vibração interna", p: { energia: 3 } },
+            { t: "O dossiê mestre com todos os meus números", p: { combo: 3 } }
+        ]
+    },
+    {
+        q: "O que você faria se tivesse clareza total sobre seu destino?",
+        img: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Daria uma chance real para a felicidade a dois", p: { amor: 2, auto: 1 } },
+            { t: "Faria escolhas financeiras muito mais ousadas", p: { futuro: 3 } },
+            { t: "Viveria com muito mais disposição e foco", p: { energia: 3 } },
+            { t: "Assumiria o controle total da minha missão", p: { combo: 3 } }
+        ]
+    },
+    {
+        q: "Como está sua mente ao acordar na maioria dos dias?",
+        img: "https://images.unsplash.com/photo-1499209974431-9dac3adaf471?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Pensando em questões afetivas ou solidão", p: { amor: 3 } },
+            { t: "Preocupada com as contas e o amanhã", p: { futuro: 3 } },
+            { t: "Neblada, como se faltasse um 'clique' interno", p: { energia: 3 } },
+            { t: "Buscando o significado maior da minha vida", p: { auto: 3 } }
+        ]
+    },
+    {
+        q: "Se o seu nome fosse uma chave, o que ela abriria agora?",
+        img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "A porta da união e cumplicidade", p: { amor: 3 } },
+            { t: "A porta da abundância e prosperidade", p: { futuro: 3 } },
+            { t: "A porta do equilíbrio e vitalidade", p: { energia: 3 } },
+            { t: "O castelo inteiro do meu potencial oculto", p: { combo: 4 } }
+        ]
+    },
+    {
+        q: "ÚLTIMA PERGUNTA: Qual nível de transformação você busca?",
+        img: "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&q=80&w=500",
+        options: [
+            { t: "Resolver apenas minha dor principal imediata", p: { auto: 2 } },
+            { t: "Entender meus ciclos de 100 anos (Plano)", p: { energia: 3 } },
+            { t: "Prever meus campos de desafios (Pirâmide)", p: { futuro: 3 } },
+            { t: "Acesso Total: Quero a Matriz Quântica Completa", p: { combo: 5 } }
+        ]
+    }
+];
+    let currentIdx = 0;
+    let scores = { amor: 0, futuro: 0, energia: 0, auto: 0, combo: 0 };
+
+    function render() {
+        const area = document.getElementById('question-area');
+        const q = questions[currentIdx];
+        document.getElementById('bar').style.width = `${(currentIdx / questions.length) * 100}%`;
+
+        area.innerHTML = `
+            <img src="${q.img}" class="img-pergunta">
+            <h2>${q.q}</h2>
+            <div class="options-grid">
+                ${q.options.map((opt, i) => `
+                    <button class="btn-option" onclick="handleSelect(${i})">${opt.t}</button>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    window.handleSelect = (optIdx) => {
+        const points = questions[currentIdx].options[optIdx].p;
+        for (let key in points) { scores[key] += points[key]; }
+
+        currentIdx++;
+        if (currentIdx < questions.length) {
+            render();
+        } else {
+            showLoading();
+        }
+    }
+
+    function showLoading() {
+        document.getElementById('question-area').style.display = 'none';
+        document.getElementById('bar').style.width = '100%';
+        document.getElementById('loading').style.display = 'block';
+        setTimeout(showResult, 3000);
+    }
+
+    function showResult() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('result').style.display = 'block';
+
+        const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+        const title = document.getElementById('res-title');
+        const desc = document.getElementById('res-desc');
+        const link = document.getElementById('res-link');
+
+        const baseUrl = "https://hemricciinstintosuperior-rcci.github.io/conexao_app_numerologia/";
+
+        if (scores.combo > 5) {
+            title.innerText = "Sinfonia Quântica Completa";
+            desc.innerText = "Sua alma não aceita respostas rasas. Você precisa do Estudo Numerológico completo integrando Matriz Quântica e Plano de Expressão.";
+            link.href = baseUrl + "index.html";
+        } else if (winner === 'amor') {
+            title.innerText = "Frequência da Harmonia";
+            desc.innerText = "Detectamos bloqueios no seu campo afetivo. A Sinastria e a Harmonia Conjugal são suas chaves agora.";
+            link.href = baseUrl + "harmonia.html";
+        } else if (winner === 'futuro') {
+            title.innerText = "Visão da Pirâmide";
+            desc.innerText = "Seus ciclos de destino estão em transição. Você precisa entender os desafios e as oportunidades da sua Pirâmide da Vida.";
+            link.href = baseUrl + "piramide.html";
+        } else if (winner === 'energia') {
+            title.innerText = "Plano de Expressão";
+            desc.innerText = "Sua vibração interna e externa estão dessincronizadas. O estudo do Plano de Expressão de 100 anos trará seu foco de volta.";
+            link.href = baseUrl + "planodeexpressao.html";
+        } else {
+            title.innerText = "Dossiê Numerológico";
+            desc.innerText = "Você busca a base de tudo. O Estudo Numerológico focado no seu nome e nascimento é o ponto de partida ideal.";
+            link.href = baseUrl + "estudonumerologico.html";
+        }
+    }
+
+    render();
+</script>
 
 </body>
 </html>
