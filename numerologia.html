@@ -37,117 +37,87 @@
 
         .btn-nav.active { background: #c9a227; color: #000; }
 
-        .secao-conteudo { display: none; animation: fadeIn 0.5s ease; }
-        .secao-conteudo.visivel { display: block; }
+        /* Estilo dos Botões - Padrão Instinto Superior */
+        .menu-ferramentas-premium {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: #111116;
+            padding: 15px;
+            position: sticky;
+            top: 0; /* Fica fixo no topo ao rolar */
+            z-index: 9999;
+            border-bottom: 2px solid #c9a44c;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .btn-premium {
+            background: #1a1a24;
+            border: 1px solid #c9a44c;
+            color: #c9a44c;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium:hover {
+            background: #c9a44c;
+            color: #111116;
+        }
+
+        .btn-premium.ativo {
+            background: #c9a44c;
+            color: #111116;
+            box-shadow: 0 0 10px rgba(201, 164, 76, 0.5);
+        }
+
+        /* 
+           REGRA CRUCIAL: Esconde todos os blocos por padrão. 
+           Conforme você colar novas seções (ex: secao-karma), adicione o ID delas aqui separado por vírgula.
+        */
+        #secao-analista, #secao-calculos {
+            display: none;
+        }
+        
+        /* Força apenas a primeira seção (Analista) a iniciar visível na tela */
+        #secao-analista {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
  <header>
     <nav>
-      
-            <a href="index.html">Início & Histórias</a>
-           <a href="quiz.html">Quiz</a>
-            <a href="midia.html">Vídeos & Músicas</a>
-            <a href="numerologia.html">Numerologia</a>
-           <a href="esoterismo.html">Espiritualidade</a>
-            <a href="astrologia.html">Astrologia & Oráculos</a>
-    
+        <a href="index.html">Início & Histórias</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="midia.html">Vídeos & Músicas</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia & Oráculos</a>
     </nav>
 </header>   
 
+<!-- BOTÕES DE SELEÇÃO DINÂMICA -->
 <div class="menu-ferramentas-premium">
     <button class="btn-premium ativo" onclick="alternarFerramenta('secao-analista')">🧠 O Analista</button>
     <button class="btn-premium" onclick="alternarFerramenta('secao-calculos')">📊 Engenharia dos Cálculos</button>
-    <!-- Os próximos botões você só ativa quando colar os outros blocos abaixo:
+    <!-- Os próximos botões você só desmarca o comentário (tira o de cima e de baixo) quando colar os outros blocos abaixo:
     <button class="btn-premium" onclick="alternarFerramenta('secao-karma')">🧬 Ciência do Karma</button>
     <button class="btn-premium" onclick="alternarFerramenta('secao-amor')">❤️ Sinergia do Amor</button>
     <button class="btn-premium" onclick="alternarFerramenta('secao-gematria')">📜 Gematria Cabalística</button>
     -->
 </div>
 
-<style>
-    /* Estilo dos Botões - Padrão Instinto Superior */
-    .menu-ferramentas-premium {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        background: #111116;
-        padding: 15px;
-        position: sticky;
-        top: 0; /* Fica fixo no topo ao rolar */
-        z-index: 9999;
-        border-bottom: 2px solid #c9a44c;
-    }
-
-    .btn-premium {
-        background: #1a1a24;
-        border: 1px solid #c9a44c;
-        color: #c9a44c;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 4px;
-        font-weight: bold;
-        font-family: sans-serif;
-        font-size: 0.9em;
-        transition: all 0.3s ease;
-    }
-
-    .btn-premium:hover {
-        background: #c9a44c;
-        color: #111116;
-    }
-
-    .btn-premium.ativo {
-        background: #c9a44c;
-        color: #111116;
-        box-shadow: 0 0 10px rgba(201, 164, 76, 0.5);
-    }
-
-    /* Regra para esconder as seções que não estão ativas */
-    #secao-analista, #secao-calculos, #secao-karma, #secao-amor, #secao-gematria {
-        display: none;
-    }
-    
-    /* Força a primeira seção (Analista) a iniciar visível */
-    #secao-analista {
-        display: block !important;
-    }
-</style>
-
-<script>
-    // Função que faz a mágica de esconder um e mostrar o outro
-    function alternarFerramenta(idSecao) {
-        // 1. Esconde todas as seções de ferramentas
-        document.getElementById('secao-analista').style.display = 'none';
-        document.getElementById('secao-calculos').style.display = 'none';
-        
-        // Se você já tiver criado as outras caixas, descomente as linhas abaixo:
-        // if(document.getElementById('secao-karma')) document.getElementById('secao-karma').style.display = 'none';
-        // if(document.getElementById('secao-amor')) document.getElementById('secao-amor').style.display = 'none';
-        // if(document.getElementById('secao-gematria')) document.getElementById('secao-gematria').style.display = 'none';
-
-        // 2. Mostra apenas a seção que o usuário clicou
-        document.getElementById(idSecao).style.display = 'block';
-
-        // 3. Remove a marca de "ativo" de todos os botões
-        const botoes = document.querySelectorAll('.btn-premium');
-        botoes.forEach(btn => btn.classList.remove('ativo'));
-
-        // 4. Adiciona a marca de "ativo" no botão que foi clicado
-        event.currentTarget.classList.add('ativo');
-
-        // 5. Move a tela de volta para o topo de forma suave
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
-
+<!-- =========================================================
+     BLOCO 1: O ANALISTA (CIÊNCIA DOS PADRÕES)
+     ========================================================= -->
 <div id="secao-analista">
     <style>
-        /* CSS ISOLADO PARA NÃO AFETAR O RESTO DO SITE */
         #secao-analista { 
             font-family: 'Helvetica Neue', Arial, sans-serif; 
             background-color: #f4f7f6; 
@@ -223,7 +193,7 @@
         </div>
 
         <div class="quote-modern">
-            "Acredito que a ajuda real só acontece quando saímos da abstração e entregamos resultados baseados em padrões observáveis e comprováveis."
+            "Acredito que a ajuda real só acontece quando saímos da abstraction e entregamos resultados baseados em padrões observáveis e comprováveis."
         </div>
 
         <div style="text-align: center; margin-top: 30px;">
@@ -243,7 +213,6 @@
      ========================================================= -->
 <div id="secao-calculos">
     <style>
-        /* CSS ISOLADO PARA NÃO AFETAR O RESTO DO SITE */
         #secao-calculos { 
             font-family: 'Inter', -apple-system, sans-serif; 
             background: #f8f9fa; 
@@ -302,7 +271,7 @@
             <h2>A Conversão Nominal (O Nome)</h2>
             <div class="formula-card">
                 <strong>Cálculo: Gematria e Redução Teosófica</strong>
-                <p>A conversão de nomes baseia-se na atribuição de valores numéricos às letras do alfabeto. O fundamento técnico vem da <strong>Escola Pitagórica (Grécia, Século VI a.C.)</strong>, que estabeleceu que "Tudo são Números".</p>
+                <p>A conversão de nomes baseia-se na attribution de valores numéricos às letras do alfabeto. O fundamento técnico vem da <strong>Escola Pitagórica (Grécia, Século VI a.C.)</strong>, que estabeleceu que "Tudo são Números".</p>
                 
                 <div class="logic-explanation">
                     <strong>O Porquê do Cálculo:</strong> Cada letra vibra em uma frequência específica (Hertz). Ao somar as vogais e consoantes separadamente, isolamos os componentes da "fórmula" humana:
@@ -385,19 +354,37 @@
         </div>
     </div>
 </div>
-    
 
-    <script>
-        function mostrar(id) {
-            // Esconde tudo
-            document.querySelectorAll('.secao-conteudo').forEach(s => s.classList.remove('visivel'));
-            document.querySelectorAll('.btn-nav').forEach(b => b.classList.remove('active'));
-            
-            // Mostra a selecionada
-            document.getElementById(id).classList.add('visivel');
-            event.currentTarget.classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
+<!-- SCRIPT DE INTERAÇÃO INTELIGENTE -->
+<script>
+    function alternarFerramenta(idSecao) {
+        // 1. Coleta todas as seções que começam com "secao-"
+        const secoes = document.querySelectorAll('[id^="secao-"]');
+        
+        // 2. Esconde absolutamente todas elas da tela
+        secoes.forEach(secao => {
+            secao.style.display = 'none';
+        });
+
+        // 3. Mostra unicamente a seção ativa que foi clicada
+        const secaoAlvo = document.getElementById(idSecao);
+        if (secaoAlvo) {
+            secaoAlvo.style.display = 'block';
         }
-    </script>
+
+        // 4. Gerencia os botões ativos mudando as classes visuais
+        const botoes = document.querySelectorAll('.btn-premium');
+        botoes.forEach(btn => btn.classList.remove('ativo'));
+
+        // 5. Destaca o botão atual
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add('ativo');
+        }
+
+        // 6. Sobe a página suavemente para o início do conteúdo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>
