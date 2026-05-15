@@ -4,31 +4,401 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instinto Superior | Numerologia e Autoconhecimento</title>
- 
-    <meta charset="UTF-8">
-    <title>Título da Página</title>
-    <link rel="stylesheet" href="estilo.css">
-    
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #020617);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        .hero img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .content-section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px 40px 20px;
+        }
+
+        .intro-text {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 214, 51, 0.05);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CARDS DE FERRAMENTAS */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 51, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* SEÇÃO DE HISTÓRIAS & LINHAGEM (ABAS) */
+        .historias-container {
+            width: 100%;
+            max-width: 960px;
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 214, 51, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .historias-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            position: relative;
+        }
+
+        .historias-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* MENU DE ABAS */
+        .tabs-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .tab-button {
+            background: rgba(51, 65, 85, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #222;
+        }
+
+        .tab-button:hover {
+            background: rgba(255, 214, 51, 0.1);
+            color: var(--text);
+        }
+
+        .tab-button.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        /* CONTEÚDO DAS ABAS */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .bio-header h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .bio-header p {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .profile-wrapper {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .profile-pic-bio {
+            width: 150px;
+            height: 150px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid var(--primary-dark);
+            flex-shrink: 0;
+            background: #222;
+        }
+
+        .bio-desc {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+
+        /* CAIXAS E ELEMENTOS ESTILIZADOS DE TEXTO */
+        .timeline-box {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .timeline-date {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .box-destaque {
+            border-left: 4px solid var(--primary-dark);
+            background: rgba(201, 164, 76, 0.05);
+            padding: 20px;
+            border-radius: 0 14px 14px 0;
+            margin: 25px 0;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .box-vintage {
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px dashed rgba(255, 214, 51, 0.3);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 25px 0;
+            line-height: 1.7;
+        }
+
+        .box-vintage h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .grid-dois-campos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .campo-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+
+        .campo-item h4 {
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .campo-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* RODAPÉ */
+        footer {
+            width: 100%;
+            background: #111116;
+            text-align: center;
+            padding: 25px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .profile-wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .hero h1 { font-size: 2rem; }
+            .historias-container { padding: 25px 15px; }
+            .tab-button { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
 <body>
 
 <header>
     <nav>
-      
-            <a href="index.html">Início & Histórias</a>
-           <a href="quiz.html">Quiz</a>
-            <a href="midia.html">Vídeos & Músicas</a>
-            <a href="numerologia.html">Numerologia</a>
-           <a href="esoterismo.html">Espiritualidade</a>
-            <a href="astrologia.html">Astrologia & Oráculos</a>
-    
+        <a href="index.html">Início & Histórias</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="midia.html">Vídeos & Músicas</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia & Oráculos</a>
     </nav>
 </header>
 
     <!-- Apresentação Hero -->
     <section class="hero">
-        <img src="   " alt="Logo Instinto Superior">
+        <img src="https://via.placeholder.com/150" alt="Logo Instinto Superior">
         <h1>BEM-VINDO AO INSTINTO SUPERIOR</h1>
         <p>Despertar • Equilíbrio • Propósito</p>
     </section>
@@ -61,16 +431,16 @@
         <!-- Menu de Navegação por Abas -->
         <div class="tabs-menu">
             <button class="tab-button active" onclick="openTab(event, 'minha-jornada')">
-                <img src="    " alt="Minha Foto"> Minha Jornada
+                <img src="https://via.placeholder.com/24" alt="Minha Foto"> Minha Jornada
             </button>
             <button class="tab-button" onclick="openTab(event, 'maike-santana')">
-                <img src="   " alt="Maike Santana"> Maike Santana
+                <img src="https://via.placeholder.com/24" alt="Maike Santana"> Maike Santana
             </button>
             <button class="tab-button" onclick="openTab(event, 'carlos-rosa')">
-                <img src="   " alt="Carlos Rosa"> Carlos Rosa
+                <img src="https://via.placeholder.com/24" alt="Carlos Rosa"> Carlos Rosa
             </button>
             <button class="tab-button" onclick="openTab(event, 'rei-gacia')">
-                <img src="   " alt="Rei Garcia"> Rei Garcia
+                <img src="https://via.placeholder.com/24" alt="Rei Garcia"> Rei Garcia
             </button>
         </div>
 
@@ -81,7 +451,7 @@
                 <p>Da Fé Imposta ao Conhecimento Consciente</p>
             </div>
             <div class="profile-wrapper">
-                <img src="    " alt="Minha Foto" class="profile-pic-bio">
+                <img src="https://via.placeholder.com/150" alt="Minha Foto" class="profile-pic-bio">
                 <div class="bio-desc">
                     <div class="timeline-box">
                         <span class="timeline-date">2002 — O Silêncio e a Doutrina</span>
@@ -99,7 +469,7 @@
                 <p>Em meio à pandemia e ao desemprego, a Numerologia Cabalística surgiu não como uma curiosidade, mas como uma missão. Através de Carlos Rosa, percebi que os números eram a linguagem do ser. Usei o auxílio emergencial para estudar e decodificar minha própria identidade simbólica.</p>
             </div>
 
-            <div class="box-destaque" style="border-left-color: #c9a227;">
+            <div class="box-destaque" style="border-left-color: #ffd633;">
                 "Se antes eu acreditava por medo, hoje eu compreendo por consciência. Se antes eu seguia verdades impostas, hoje busco verdades fundamentadas."
             </div>
 
@@ -116,26 +486,26 @@
                 <p>Escritor e Ser Interior em Evolução</p>
             </div>
             <div class="profile-wrapper">
-                <img src="    " alt="Maike Santana" class="profile-pic-bio">
+                <img src="https://via.placeholder.com/150" alt="Maike Santana" class="profile-pic-bio">
                 <div class="bio-desc">
-                    <p><strong>Maike Santana</strong> é um exemplo de resiliência [cite: user_context]. Através de sua obra, ele compartilha como transformou dores físicas profundas e diagnósticos crônicos em uma jornada de despertar espiritual [cite: user_context]. Ex-praticante de esportes e entusiasta de uma vida ativa, ele encontrou na escrita e na introspecção a salvação para os desafios impostos pela Distrofia Muscular e pela Doença de Crohn [cite: user_context].</p>
-                    <p>Mais que um autor, Maike é uma alma íntegra que impacta a todos com sua história de superação constante, provando que a verdadeira liberdade reside no interior [cite: user_context].</p>
+                    <p><strong>Maike Santana</strong> é um exemplo de resiliência. Através de sua obra, ele compartilha como transformou dores físicas profundas e diagnósticos crônicos em uma jornada de despertar espiritual. Ex-praticante de esportes e entusiasta de uma vida active, ele encontrou na escrita e na introspecção a salvação para os desafios impostos pela Distrofia Muscular e pela Doença de Crohn.</p>
+                    <p>Mais que um autor, Maike é uma alma íntegra que impacta a todos com sua história de superação constante, provando que a verdadeira liberdade reside no interior.</p>
                 </div>
             </div>
 
             <div class="box-vintage">
                 <h3>Agradecimentos do Autor</h3>
-                <p>“Aos familiares e amigos que interferiram em minha vida compartilhando afetos, mas também às pessoas que trombaram em minha trajetória indiretamente, pois admito que grande parte do meu jardim floresceu por causa de cada muda plantada por um destes!” [cite: user_context]</p>
+                <p>“Aos familiares e amigos que interferiram em minha vida compartilhando afetos, mas também às pessoas que trombaram em minha trajetória indiretamente, pois admito que grande parte do meu jardim floresceu por causa de cada muda plantada por um destes!”</p>
             </div>
 
             <div class="grid-dois-campos">
                 <div class="campo-item">
                     <h4>Doença de Crohn</h4>
-                    <p>Condição inflamatória crônica do trato digestivo [cite: user_context]. Exige disciplina, tratamentos intensos e uma força mental inabalável para lidar com a fadiga e os sintomas recorrentes [cite: user_context].</p>
+                    <p>Condição inflamatória crônica do trato digestivo. Exige disciplina, tratamentos intensos e uma força mental inabalável para lidar com a fadiga e os sintomas recorrentes.</p>
                 </div>
                 <div class="campo-item">
                     <h4>Distrofia Muscular</h4>
-                    <p>Desafio genético que causa a fraqueza progressiva dos músculos [cite: user_context]. Uma batalha que Maike enfrenta buscando na essência espiritual a mobilidade que o corpo limita [cite: user_context].</p>
+                    <p>Desafio genético que causa a fraqueza progressiva dos músculos. Uma batalha que Maike enfrenta buscando na essência espiritual a mobilidade que o corpo limita.</p>
                 </div>
             </div>
         </div>
@@ -147,21 +517,21 @@
                 <p>O Pioneiro da Numerologia Cabalística no Brasil</p>
             </div>
             <div class="profile-wrapper">
-                <img src="    " alt="Carlos Rosa" class="profile-pic-bio">
+                <img src="https://via.placeholder.com/150" alt="Carlos Rosa" class="profile-pic-bio">
                 <div class="bio-desc">
-                    <p>A história da Numerologia Cabalística moderna no Brasil tem um marco inicial claro: o trabalho de <strong>Carlos Rosa</strong> [cite: user_context]. Em 2002, ele fundou a <strong>Academia Brasileira de Numerologia Cabalística (ABNC)</strong>, tornando-se o principal responsável por trazer esse conhecimento ancestral para o público brasileiro de forma estruturada e didática [cite: user_context].</p>
-                    <p>Através de suas obras e ensinos, Carlos Rosa desmistificou o uso da Gematria e a aplicação da Tabela Cabalística, defendendo que os números são a linguagem fundamental do universo [cite: user_context].</p>
+                    <p>A história da Numerologia Cabalística moderna no Brasil tem um marco inicial claro: o trabalho de <strong>Carlos Rosa</strong>. Em 2002, ele fundou a <strong>Academia Brasileira de Numerologia Cabalística (ABNC)</strong>, tornando-se o principal responsável por trazer esse conhecimento ancestral para o público brasileiro de forma estruturada e didática.</p>
+                    <p>Através de suas obras e ensinos, Carlos Rosa desmistificou o uso da Gematria e a aplicação da Tabela Cabalística, defendendo que os números são a linguagem fundamental do universo.</p>
                 </div>
             </div>
 
             <div class="box-vintage">
                 <h3>Uma Conexão de Propósito</h3>
-                <p>"Minha trajetória com os números começou a ganhar forma em 2019 [cite: user_context]. (...) Foi através dos vídeos e das lições de Carlos Rosa que encontrei a Numerologia — não apenas como uma teoria, mas como uma ferramenta de praticidade absoluta [cite: user_context]. Ele foi a ponte que me permitiu sair de um estado de incerteza para um caminho de clareza técnica [cite: user_context]."</p>
+                <p>"Minha trajetória com os números começou a ganhar forma em 2019. (...) Foi através dos vídeos e das lições de Carlos Rosa que encontrei a Numerologia — não apenas como uma teoria, mas como uma ferramenta de praticidade absoluta. Ele foi a ponte que me permitiu sair de um estado de incerteza para um caminho de clareza técnica."</p>
             </div>
 
-            <div class="box-destaque" style="border-left-color: #c5a021;">
+            <div class="box-destaque">
                 <h3>Da Tradição à Ciência</h3>
-                <p>Honro o misticismo que ele apresentou, pois foi ele que pavimentou o caminho [cite: user_context]. No entanto, meu compromisso atual é levar esse legado para o próximo nível: o da comprovação por padrões, do estudo cerebral e da psicologia aplicada [cite: user_context]. Carlos Rosa trouxe a chave; meu trabalho é aplicar essa chave na engenharia do comportamento humano moderno [cite: user_context].</p>
+                <p>Honro o misticismo que ele apresentou, pois foi ele que pavimentou o caminho. No entanto, meu compromisso atual é levar esse legado para o próximo nível: o da comprovação por padrões, do estudo cerebral e da psicologia aplicada. Carlos Rosa trouxe a chave; meu trabalho é aplicar essa chave na engenharia do comportamento humano moderno.</p>
             </div>
         </div>
 
@@ -172,16 +542,16 @@
                 <p>Numerologia Quântica e a Ciência do Ser</p>
             </div>
             <div class="profile-wrapper">
-                <img src="    " alt="Rei Garcia" class="profile-pic-bio">
+                <img src="https://via.placeholder.com/150" alt="Rei Garcia" class="profile-pic-bio">
                 <div class="bio-desc">
-                    <p><strong>Reinaldo Martins Garcia</strong> é a personificação do equilíbrio entre a mente analítica e a percepção metafísica [cite: user_context]. Engenheiro e empresário por formação, Reinaldo trouxe para o universo da numerologia o rigor científico que o campo necessitava [cite: user_context]. Atuando como numerólogo cabalista, tarólogo e palestrante, seu trabalho é um convite à evolução da consciência [cite: user_context].</p>
-                    <p>Diferente das abordagens puramente místicas, o "Rei Garcia" fundamenta sua prática na <strong>Numerologia Quântica</strong>, utilizando conceitos de física e frequência para harmonizar energias [cite: user_context].</p>
+                    <p><strong>Reinaldo Martins Garcia</strong> é a personificação do equilíbrio entre a mente analítica e a percepção metafísica. Engenheiro e empresário por formação, Reinaldo trouxe para o universo da numerologia o rigor científico que o campo necessitava. Atuando como numerólogo cabalista, tarólogo e palestrante, seu trabalho é um convite à evolução da consciência.</p>
+                    <p>Diferente das abordagens puramente místicas, o "Rei Garcia" fundamenta sua prática na <strong>Numerologia Quântica</strong>, utilizando conceitos de física e frequência para harmonizar energias.</p>
                 </div>
             </div>
 
             <div class="box-destaque">
                 <h3>A Ponte para a Ciência</h3>
-                <p>"Reinaldo Garcia foi o mestre que equilibrou minha jornada [cite: user_context]. Se o início do meu caminho foi marcado pela fé e pelo misticismo, foi com o Reinaldo que aprendi a centrar meus estudos na modernidade científica [cite: user_context]. Ele me deu a mentalidade necessária para construir ferramentas científicas que realmente transformam a vida das pessoas [cite: user_context]."</p>
+                <p>"Reinaldo Garcia foi o mestre que equilibrou minha jornada. Se o início do meu caminho foi marcado pela fé e pelo misticismo, foi com o Reinaldo que aprendi a centrar meus estudos na modernidade científica. Ele me deu a mentalidade necessária para construir ferramentas científicas que realmente transformam a vida das pessoas."</p>
             </div>
         </div>
 
@@ -195,20 +565,17 @@
     <!-- SCRIPT DE INTEGRAÇÃO DAS ABAS -->
     <script>
         function openTab(evt, tabName) {
-            // Esconde todos os conteúdos das abas
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].className = tabcontent[i].className.replace(" active", "");
             }
 
-            // Remove a classe "active" de todos os botões
             tablinks = document.getElementsByClassName("tab-button");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
-            // Mostra a aba atual e adiciona a classe "active" ao botão clicado
             document.getElementById(tabName).className += " active";
             evt.currentTarget.className += " active";
         }
