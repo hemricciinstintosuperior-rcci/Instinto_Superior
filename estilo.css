@@ -16,40 +16,52 @@ body {
     line-height: 1.6;
 }
 
-/* Menu Superior Integrado */
+/* ====================================================
+   MENU SUPERIOR HORIZONTAL (BEM NO TOPO, UM AO LADO DO OUTRO)
+   ==================================================== */
 header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 20px 0;
+    padding: 15px 0; /* Diminuído para ocupar menos espaço vertical */
     text-align: center;
     border-bottom: 2px solid var(--dourado);
-    position: sticky;
+    position: sticky; /* Mantém o menu fixo no topo ao rolar a página */
     top: 0;
     z-index: 1000;
 }
 
-nav a {
+header nav {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    align-items: center;
+    gap: 25px; /* Espaçamento exato entre um link e outro */
+    flex-wrap: wrap; /* Se a tela for muito pequena (celular), eles quebram linha suavemente */
+}
+
+header nav a {
     color: var(--dourado);
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.85em;
-    transition: 0.3s;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
 }
 
-nav a:hover, nav a.active {
+header nav a:hover, header nav a.active {
     color: #fff;
     text-shadow: 0 0 10px var(--dourado);
 }
 
-/* Layout das Páginas */
+/* ====================================================
+   LAYOUT E CARDS DAS PÁGINAS
+   ==================================================== */
 .content-section {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* Estilo de Cartões (Cards) */
 .card-padrao {
     background: var(--card-bg);
     padding: 25px;
