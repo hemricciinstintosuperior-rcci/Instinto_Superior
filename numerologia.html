@@ -64,107 +64,247 @@
         <button class="btn-nav" onclick="mostrar('calculos')">Matemática e Origem</button>
     </div>
 
-    <div id="karma" class="secao-conteudo visivel">
-        <style>
-            #karma { background: #f3f4f6; color: #374151; padding: 40px 20px; }
-            #karma .container { max-width: 950px; margin: auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 25px rgba(0,0,0,0.1); }
-            #karma h1 { color: #2563eb; text-align: center; }
-            #karma .manifesto-box { background: #eff6ff; border-left: 6px solid #2563eb; padding: 20px; font-style: italic; }
-            #karma table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-            #karma th { background: #374151; color: white; padding: 10px; }
-            #karma td { padding: 10px; border-bottom: 1px solid #eee; }
-        </style>
-        <div class="container">
-            <h1>A Ciência por trás do "Karma"</h1>
-            <div class="manifesto-box">"Não trabalhamos com adivinhação... Nosso foco é a ciência do padrão presente."</div>
-            <h2>A Desconstrução do Fatalismo</h2>
-            <p>Substituímos termos arcaicos por definições técnicas:</p>
+<div id="secao-analista">
+    <style>
+        /* CSS ISOLADO PARA NÃO AFETAR O RESTO DO SITE */
+        #secao-analista { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+        }
+        #secao-analista .hero-analista { 
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+        }
+        #secao-analista .hero-analista h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; font-weight: 300; color: white; }
+        #secao-analista .hero-analista p { font-size: 1.2em; color: #3498db; margin-top: 10px; }
+
+        #secao-analista .main-content-analista { max-width: 900px; margin: -50px auto 50px; background: white; padding: 50px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        #secao-analista .profile-vision { border-bottom: 2px solid #eee; padding-bottom: 30px; margin-bottom: 40px; }
+        #secao-analista .profile-vision h2 { color: #2c3e50; font-size: 1.8em; }
+
+        #secao-analista .research-card { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; }
+        #secao-analista .icon { font-size: 2.5em; color: #3498db; }
+        #secao-analista .research-text h3 { margin-top: 0; color: #2c3e50; }
+
+        #secao-analista .methodology-box { background: #eef2f3; border-radius: 8px; padding: 30px; margin: 40px 0; border-left: 6px solid #27ae60; }
+        #secao-analista .methodology-box h4 { margin-top: 0; color: #27ae60; text-transform: uppercase; letter-spacing: 1px; }
+
+        #secao-analista .quote-modern { font-size: 1.3em; color: #2c3e50; font-style: italic; text-align: center; padding: 40px 0; border-top: 1px solid #eee; }
+
+        #secao-analista .tag-analista { background: #3498db; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.8em; margin-right: 5px; }
+
+        #secao-analista footer { text-align: center; padding: 40px; color: #999; font-size: 0.9em; }
+    </style>
+
+    <header class="hero-analista">
+        <h1>A Ciência dos Padrões</h1>
+        <p>A Numerologia como Decodificadora da Realidade e do Comportamento</p>
+    </header>
+
+    <main class="main-content-analista">
+        <section class="profile-vision">
+            <h2>O Analista por trás dos Dados</h2>
+            <p>Minha jornada não é pautada por títulos acadêmicos tradicionais, mas por uma <strong>curiosidade intelectual incansável</strong> e pelo rigor da observação empírica. Eu me defino como um estudioso da modernidade científica, alguém que busca o fundamento racional por trás de sistemas que muitos consideram abstratos.</p>
+            <p>Minha atuação como numerólogo baseia-se na <strong>Ciência de Dados Humana</strong>. Eu não busco adivinhações; eu busco padrões. O universo não fala conosco por palavras, ele se expressa através de frequências, e os números são a tradução mais precisa dessas frequências em nossa realidade física.</p>
+        </section>
+
+        <div class="research-card">
+            <div class="icon">🧠</div>
+            <div class="research-text">
+                <h3>Numerologia e Neurociência</h3>
+                <p>Um dos pilares do meu estudo é entender a conexão entre as frequências numéricas e as atitudes humanas. Através da neurociência, busco compreender como os padrões vibracionais influenciam o sentimento e a tomada de decisão. Não se trata de misticismo, mas de entender como o cérebro reage a determinados padrões repetitivos e como isso se manifesta em nosso comportamento diário.</p>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <div class="icon">📊</div>
+            <div class="research-text">
+                <h3>Do Padrão à Prática</h3>
+                <p>Meu trabalho consiste em transformar situações, ambientes e datas em números para analisar sua frequência. Seja na análise de uma residência ou de um dia específico, o objetivo é encontrar a lógica por trás dos eventos. Se existe um padrão, existe uma regra; se existe uma regra, existe uma ciência.</p>
+            </div>
+        </div>
+
+        <div class="methodology-box">
+            <h4>Minha Premissa Metodológica</h4>
+            <ul>
+                <li><strong>Sem Adivinhação:</strong> Trabalhamos com probabilidades e tendências estatísticas.</li>
+                <li><strong>Foco na Prática:</strong> A teoria só tem valor se puder ser comprovada e aplicada na melhora da vida das pessoas.</li>
+                <li><strong>Interdisciplinaridade:</strong> União da Gematria clássica com conceitos de Neurociência e Física Quântica.</li>
+                <li><strong>Frequência Universal:</strong> Entendimento de que tudo o que existe possui uma assinatura numérica fundamental.</li>
+            </ul>
+        </div>
+
+        <div class="quote-modern">
+            "Acredito que a ajuda real só acontece quando saímos da abstração e entregamos resultados baseados em padrões observáveis e comprováveis."
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <span class="tag-analista">Pesquisa Empírica</span>
+            <span class="tag-analista">Neuro-Análise</span>
+            <span class="tag-analista">Ciência dos Números</span>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 • Pesquisa e Desenvolvimento de Sistemas Vibracionais • Ciência e Consciência.
+    </footer>
+</div>
+
+<!-- =========================================================
+     BLOCO 2: ENGENHARIA DOS CÁLCULOS NUMEROLÓGICOS
+     ========================================================= -->
+<div id="secao-calculos">
+    <style>
+        /* CSS ISOLADO PARA NÃO AFETAR O RESTO DO SITE */
+        #secao-calculos { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            background: #f8f9fa; 
+            color: #2c3e50; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 20px; 
+        }
+        #secao-calculos .container-calculos { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            background: #fff; 
+            padding: 50px; 
+            border-radius: 4px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            border-top: 6px solid #1a2a6c; 
+        }
+        
+        #secao-calculos h1 { color: #1a2a6c; font-size: 2em; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-top: 0; }
+        #secao-calculos h2 { color: #c9a44c; font-size: 1.4em; margin-top: 40px; display: flex; align-items: center; }
+        #secao-calculos h2::before { content: "∑"; margin-right: 15px; font-size: 1.2em; color: #1a2a6c; }
+
+        #secao-calculos .formula-card { background: #f1f3f5; border-radius: 8px; padding: 25px; margin: 20px 0; border-left: 5px solid #1a2a6c; }
+        #secao-calculos .formula-card strong { color: #1a2a6c; display: block; margin-bottom: 10px; font-size: 1.1em; }
+        
+        #secao-calculos .origin-tag { font-size: 0.85em; font-weight: bold; color: #7f8c8d; text-transform: uppercase; display: block; margin-top: 10px; }
+        
+        #secao-calculos .logic-explanation { background: #fff; padding: 15px; border: 1px solid #e0e0e0; border-radius: 4px; margin-top: 15px; font-size: 0.95em; }
+        
+        #secao-calculos .grid-calculos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        #secao-calculos table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        #secao-calculos th, #secao-calculos td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        #secao-calculos th { color: #1a2a6c; font-size: 0.9em; text-transform: uppercase; }
+
+        /* RESPONSIVIDADE CELULAR */
+        @media (max-width: 600px) { 
+            #secao-calculos .grid-calculos { grid-template-columns: 1fr; } 
+        }
+      
+        @media (max-width: 768px) {
+            #secao-calculos .container-calculos {
+                padding: 15px !important;
+                margin: 10px auto;
+            }
+            #secao-calculos h1 {
+                font-size: 1.5em !important;
+            }
+        }     
+    </style>
+
+    <div class="container-calculos">
+        <h1>Fundamentos Matemáticos e Origem dos Cálculos</h1>
+
+        <section>
+            <h2>A Conversão Nominal (O Nome)</h2>
+            <div class="formula-card">
+                <strong>Cálculo: Gematria e Redução Teosófica</strong>
+                <p>A conversão de nomes baseia-se na atribuição de valores numéricos às letras do alfabeto. O fundamento técnico vem da <strong>Escola Pitagórica (Grécia, Século VI a.C.)</strong>, que estabeleceu que "Tudo são Números".</p>
+                
+                <div class="logic-explanation">
+                    <strong>O Porquê do Cálculo:</strong> Cada letra vibra em uma frequência específica (Hertz). Ao somar as vogais e consoantes separadamente, isolamos os componentes da "fórmula" humana:
+                    <ul>
+                        <li><strong>Soma das Vogais:</strong> Representa o "Éter" ou a Essência (Alma).</li>
+                        <li><strong>Soma das Consoantes:</strong> Representa a "Matéria" ou a Forma (Impressão).</li>
+                        <li><strong>Soma Total:</strong> A síntese da Expressão Social.</li>
+                    </ul>
+                </div>
+                <span class="origin-tag">Origem: Pitágoras de Samos / Adaptação Cabalística Semítica</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>A Geometria do Tempo (A Data)</h2>
+            <div class="formula-card">
+                <strong>Cálculo: Progressão Aritmética Temporal</strong>
+                <p>O cálculo do Destino e dos Ciclos utiliza a data de nascimento como uma coordenada vetorial no tempo.</p>
+                
+                <div class="logic-explanation">
+                    <strong>O Fundamento:</strong> A soma do Dia, Mês e Ano não é apenas um agrupamento, mas uma <strong>Redução Teosófica</strong>. Este método foi defendido por matemáticos e místicos antigos para encontrar a "Raiz Digital" de qualquer número complexo, reduzindo-o à sua unidade essencial (1 a 9).
+                </div>
+                <span class="origin-tag">Origem: Tradições Caldeias e Matemáticos Helenísticos</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>A Dinâmica dos Ciclos e Desafios</h2>
+            <div class="grid-calculos">
+                <div class="formula-card">
+                    <strong>Soma (Ciclos/Momentos Decisivos)</strong>
+                    <p>O fundamento da adição aqui é a <strong>Acumulação</strong>. Representa o fluxo de oportunidades e a construção do tempo cronológico.</p>
+                    <span class="origin-tag">Fundado em: Observação de Ciclos Naturais (Eudoxo de Cnido)</span>
+                </div>
+                <div class="formula-card">
+                    <strong>Subtração (Os Desafios)</strong>
+                    <p>O fundamento é a <strong>Diferença de Potencial</strong>. Subtrai-se para identificar o vácuo entre duas energias do nascimento.</p>
+                    <span class="origin-tag">Fundado em: Geometria Sagrada e Dialética dos Opostos</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Métricas de Cálculo</h2>
             <table>
-                <tr><th>Termo Antigo</th><th>Termo Moderno</th><th>Significado</th></tr>
-                <tr><td>Dívida Cármica</td><td>Déficit de Comportamento</td><td>Padrões repetitivos negativos.</td></tr>
-                <tr><td>Lição Cármica</td><td>Inibições e Fraquezas</td><td>Bloqueios de expressão.</td></tr>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Operação</th>
+                        <th>Fundamento Matemático</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Destino</strong></td>
+                        <td>Soma Total (D+M+A)</td>
+                        <td>Raiz Digital Temporal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ciclos de Vida</strong></td>
+                        <td>Somas Individuais</td>
+                        <td>Divisão em Terços (Início, Meio, Fim)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Desafios</strong></td>
+                        <td>Subtração Diferencial</td>
+                        <td>Cálculo de Atrito e Resistência</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Momentos Decisivos</strong></td>
+                        <td>Soma de Ciclos</td>
+                        <td>Ápice Vibracional</td>
+                    </tr>
+                </tbody>
             </table>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px; font-size: 0.8em; color: #95a5a6;">
+            <p>Este sistema matemático é o resultado de milênios de observação, codificado por Pitágoras e refinado por gerações de matemáticos e cabalistas.</p>
         </div>
     </div>
-
-    <div id="amor" class="secao-conteudo">
-        <style>
-            #amor { background: #fcfcfc; color: #2d3436; padding-bottom: 50px; }
-            #amor .hero-love { background: #941b1b; color: white; padding: 60px; text-align: center; }
-            #amor .grid-numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 20px auto; }
-            #amor .number-card { background: white; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
-            #amor .love-red { color: #941b1b; font-weight: bold; }
-        </style>
-        <div class="hero-love">
-            <h1>Harmonia e Conexão</h1>
-            <p>A Ciência da Compatibilidade Vibracional</p>
-        </div>
-        <div class="grid-numbers">
-            <div class="number-card"><h3>❤️ Número 1</h3><p>Atração baseada na mente e na poesia. Estimula a variedade.</p></div>
-            <div class="number-card"><h3>❤️ Número 2</h3><p>Seletividade voltada para o conforto e segurança financeira.</p></div>
-            </div>
-    </div>
-
-    <div id="dicionario" class="secao-conteudo">
-        <style>
-            #dicionario { background: #f8fafc; color: #0f172a; padding: 40px; }
-            #dicionario .number-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: auto; }
-            #dicionario .num-val { font-size: 2.5em; color: #fbbf24; font-weight: 800; }
-            #dicionario .master-badge { background: #0f172a; color: #fbbf24; padding: 2px 5px; font-size: 0.7em; }
-        </style>
-        <div class="number-grid">
-            <div class="number-card"><span class="num-val">11</span> <span class="master-badge">MESTRE</span><p>O Visionário: Intuição aguda e inspiração.</p></div>
-            <div class="number-card"><span class="num-val">22</span> <span class="master-badge">MESTRE</span><p>O Construtor Master: Grandes projetos para a humanidade.</p></div>
-            </div>
-    </div>
-
-    <div id="gematria" class="secao-conteudo">
-        <style>
-            #gematria { background: #fdfaf1; color: #3d2b1f; padding: 40px; }
-            #gematria .cabalistic-table { width: 100%; border-collapse: collapse; background: white; }
-            #gematria th { background: #3d2b1f; color: white; padding: 15px; }
-            #gematria td { border: 1px solid #dcd0b9; padding: 10px; text-align: center; }
-        </style>
-        <div style="max-width: 1000px; margin: auto;">
-            <h1>A Supremacia da Tabela Cabalística</h1>
-            <table class="cabalistic-table">
-                <tr><th>Valor</th><th>Letras</th><th>Significado</th></tr>
-                <tr><td>1</td><td>A, I, Q, J, Y</td><td>Início e Liderança</td></tr>
-                <tr><td>2</td><td>B, K, R</td><td>Dualidade e Conhecimento</td></tr>
-            </table>
-            <p><strong>A Ciência dos Acentos:</strong> O acento agudo eleva a vibração, o circunflexo interioriza.</p>
-        </div>
-    </div>
-
-    <div id="analista" class="secao-conteudo">
-        <style>
-            #analista { background: white; color: #333; padding: 50px; }
-            #analista .hero-lab { background: #2c3e50; color: white; padding: 40px; text-align: center; }
-            #analista .tag { background: #3498db; color: white; padding: 5px 10px; border-radius: 10px; }
-        </style>
-        <div class="hero-lab"><h1>Ciência de Dados Humana</h1></div>
-        <div style="max-width: 800px; margin: auto;">
-            <p>Minha jornada é pautada pela curiosidade intelectual. Busco padrões, não adivinhações.</p>
-            <span class="tag">Neuro-Análise</span> <span class="tag">Pesquisa Empírica</span>
-        </div>
-    </div>
-
-    <div id="calculos" class="secao-conteudo">
-        <style>
-            #calculos { background: #f8f9fa; color: #2c3e50; padding: 40px; }
-            #calculos .formula-card { background: white; border-top: 5px solid #1a2a6c; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        </style>
-        <div style="max-width: 900px; margin: auto;">
-            <div class="formula-card">
-                <h2>A Conversão Nominal</h2>
-                <p>Baseia-se na Escola Pitagórica. Vogais = Alma, Consoantes = Matéria.</p>
-            </div>
-            <div class="formula-card">
-                <h2>Geometria do Tempo</h2>
-                <p>O cálculo do Destino utiliza a Redução Teosófica da data de nascimento.</p>
-            </div>
-        </div>
-    </div>
+</div>
+    
 
     <script>
         function mostrar(id) {
