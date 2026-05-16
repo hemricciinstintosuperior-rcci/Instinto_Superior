@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instinto Superior | Espiritualidade e Consciência</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #ffd633;
             --primary-dark: #c9a44c;
             --bg: #020617;
-            --card-bg: rgba(30, 41, 59, 0.6);
+            --card-bg: rgba(30, 41, 59, 0.45);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -20,17 +23,19 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at top right, #1e293b, #020617);
+            background-attachment: fixed;
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         header {
             width: 100%;
-            background: #111116;
+            background: #0b0f19;
             border-bottom: 2px solid var(--primary-dark);
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         header nav {
@@ -44,18 +49,22 @@
         }
 
         header nav a {
-            color: var(--primary-dark);
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            padding: 8px 12px;
-            transition: 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s ease;
         }
 
-        header nav a:hover { color: var(--primary); }
+        header nav a:hover, header nav a.active {
+            color: var(--primary);
+            background: rgba(255, 214, 51, 0.1);
+        }
 
         .main-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -63,56 +72,117 @@
         /* Estilização Geral das Seções */
         .esp-section {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 214, 51, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 51, 0.08);
             border-radius: 24px;
             padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
         }
 
         .esp-section h2 {
             color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-bottom: 1px solid rgba(255, 214, 51, 0.2);
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .esp-section h2 i {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+        }
+
+        /* Imagens das Seções */
+        .section-banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            text-align: justify;
         }
 
         .highlight-box {
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(15, 23, 42, 0.8);
             border-left: 4px solid var(--primary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 12px 12px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #111116;
-            color: var(--text-muted);
-            margin-top: 60px;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
         }
 
         /* Grid para Leis e Ensinos */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .info-item {
-            background: rgba(15, 23, 42, 0.4);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.5);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .info-item h3 { color: var(--primary-dark); margin-bottom: 10px; }
+        .info-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 214, 51, 0.3);
+        }
+
+        .info-item h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item h3 i {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #0b0f19;
+            color: var(--text-muted);
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 214, 51, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .esp-section { padding: 25px; }
+            .esp-section h2 { font-size: 1.7rem; }
+            .section-banner { height: 200px; }
+        }
     </style>
 </head>
 <body>
@@ -123,152 +193,176 @@
         <a href="quiz.html">Quiz</a>
         <a href="midia.html">Vídeos</a>
         <a href="numerologia.html">Numerologia</a>
-        <a href="esoterismo.html">Esoterismo</a>
-        <a href="astrologia.html">Astrologia </a>
+        <a href="esoterismo.html" class="active">Esoterismo</a>
+        <a href="astrologia.html">Astrologia</a>
     </nav>
 </header>
 
 <div class="main-container">
 
-    <section id="esoterismo-base" class="esp-section"></section>
-    <h2>O que é o Esoterismo?</h2>
-    <p>Diferente do que muitos acreditam, o <strong>esoterismo</strong> não é uma religião, mas sim um conjunto de tradições e ensinamentos que buscam desvendar o que está "oculto" aos olhos comuns. A palavra vem do grego <em>esôterikos</em>, que significa "interno" ou "voltado para dentro".</p>
-    
-    <div class="highlight-box">
-        "Enquanto o conhecimento exotérico (com 'x') é aquilo que é ensinado publicamente, o conhecimento <strong>esotérico</strong> é reservado àqueles que buscam a essência por trás das aparências."
-    </div>
+    <!-- SEÇÃO: O QUE É ESOTERISMO -->
+    <section id="esoterismo-base" class="esp-section">
+        <h2><i class="fa-solid fa-eye"></i> O que é o Esoterismo?</h2>
+        <img src="https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?auto=format&fit=crop&w=1200&q=80" alt="Universo Oculto e Místico" class="section-banner">
+        
+        <p>Diferente do que o senso comum dita, o <strong>esoterismo</strong> não está ligado a superstições cegas ou dogmas religiosos. Ele representa uma corrente filosófica milenar que busca desvendar as verdades ocultas por trás da realidade material. A palavra tem origem no grego <em>esôterikos</em>, que se traduz como "interno" ou "aquilo que está voltado para dentro".</p>
+        
+        <div class="highlight-box">
+            "Enquanto o conhecimento exotérico (com 'x') descreve o que é ensinado publicamente para as massas através da literalidade, o conhecimento <strong>esotérico</strong> é a chave interpretativa reservada àqueles que buscam a real essência por trás dos símbolos."
+        </div>
 
-    <p>O objetivo do estudo esotérico no nosso portal é fornecer ferramentas para que você compreenda as engrenagens invisíveis do universo. É a busca pela conexão entre o microcosmo (o ser humano) e o macrocosmo (o universo), utilizando sistemas como a numerologia, a astrologia e a filosofia oculta para alcançar a maestria sobre a própria vida.</p>
+        <p>O objetivo fundamental do estudo esotérico em nosso portal é fornecer ferramentas práticas para que você decodifique a engrenagem invisível do cosmos. Trata-se da reconexão consciente entre o <strong>microcosmo</strong> (o ser humano e sua psique) e o <strong>macrocosmo</strong> (o universo cósmico). Utilizando sistemas codificados como a numerologia, a astrologia e a alta filosofia oculta, você assume o papel de arquiteto e mestre de sua própria jornada.</p>
+    </section>
 
-    <section id="leis-hermeticas" class="esp-section"></section>
-    <h2>As 7 Leis Herméticas</h2>
-    <p>Baseadas nos ensinamentos de <strong>Hermes Trismegistus</strong> e compiladas no livro <em>O Caibalion</em>, estas leis são os princípios básicos que governam toda a realidade. Compreendê-las é o primeiro passo para o despertar do <strong>Instinto Superior</strong>.</p>
+    <!-- SEÇÃO: LEIS HERMÉTICAS -->
+    <section id="leis-hermeticas" class="esp-section">
+        <h2><i class="fa-solid fa-scroll"></i> As 7 Leis Herméticas</h2>
+        <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1200&q=80" alt="Geometria Sagrada e Conhecimento" class="section-banner">
+        
+        <p>Baseadas nos ensinamentos atribuídos a <strong>Hermes Trismegistus</strong> (o três vezes grande) e compiladas no manuscrito seminal <em>O Caibalion</em>, estas sete leis são os axiomas fundamentais que governam a estrutura do tecido da realidade. Compreender a mecânica dessas leis é o primeiro e mais crucial passo para o despertar do seu <strong>Instinto Superior</strong>.</p>
 
-    <div class="info-grid">
-        <div class="info-item">
-            <h3>1. Mentalismo</h3>
-            <p>"O Todo é Mente; o Universo é mental." Tudo o que existe foi criado primeiro no pensamento.</p>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3><i class="fa-solid fa-brain"></i> 1. Mentalismo</h3>
+                <p>"O Todo é Mente; o Universo é mental." A matéria é uma manifestação da consciência. Tudo o que existe foi concebido e estruturado no plano sutil do pensamento antes de colapsar na realidade física.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-arrows-up-down"></i> 2. Correspondência</h3>
+                <p>"O que está em cima é como o que está embaixo; o que está dentro é como o que está fora." Existe uma harmonia matemática entre os diferentes planos de existência. Os padrões que governam as galáxias espelham os padrões de um átomo.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-wave-square"></i> 3. Vibração</h3>
+                <p>"Nada está parado; tudo se move; tudo vibra." A física moderna confirma o esoterismo: a diferença entre as manifestações da matéria, da mente e do espírito resulta puramente de suas diferentes frequências vibratórias.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-yin-yang"></i> 4. Polaridade</h3>
+                <p>"Tudo é duplo; tudo tem polos; tudo tem o seu oposto." Os opostos são, na verdade, idênticos em sua natureza intrínseca, variando apenas em grau. O amor e o ódio, o frio e o calor, são apenas extremidades de uma mesma régua.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-infinity"></i> 5. Ritmo</h3>
+                <p>"Tudo tem fluxo e refluxo; tudo tem suas marés; a medida do balanço à direita é a mesma da esquerda." O universo funciona em ciclos perfeitos de compensação. Aprender a neutralizar o balanço negativo do pêndulo é o segredo da maestria emocional.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-clock"></i> 6. Causa e Efeito</h3>
+                <p>"Toda causa tem seu efeito; todo efeito tem sua causa." Não existe o acaso; a sorte ou o azar são meramente nomes dados a uma lei universal cujas conexões ainda não fomos capazes de rastrear e compreender.</p>
+            </div>
+            <div class="info-item" style="grid-column: 1 / -1;">
+                <h3><i class="fa-solid fa-venus-mars"></i> 7. Gênero</h3>
+                <p>"O Gênero está em tudo; tudo tem os seus princípios masculino e feminino." Nenhuma criação — seja ela física, mental ou espiritual — é possível sem a conjunção e o equilíbrio harmônico destas duas forças polares.</p>
+            </div>
         </div>
-        <div class="info-item">
-            <h3>2. Correspondência</h3>
-            <p>"O que está em cima é como o que está embaixo." As leis que regem o universo regem também a sua célula.</p>
-        </div>
-        <div class="info-item">
-            <h3>3. Vibração</h3>
-            <p>"Nada está parado; tudo se move; tudo vibra." Tudo no universo é energia em frequências diferentes.</p>
-        </div>
-        <div class="info-item">
-            <h3>4. Polaridade</h3>
-            <p>"Tudo é duplo; tudo tem polos; tudo tem o seu oposto." Extremos são apenas graus da mesma coisa.</p>
-        </div>
-        <div class="info-item">
-            <h3>5. Ritmo</h3>
-            <p>"Tudo tem fluxo e refluxo; a medida do balanço à direita é a medida do balanço à esquerda."</p>
-        </div>
-        <div class="info-item">
-            <h3>6. Causa e Efeito</h3>
-            <p>"Toda causa tem seu efeito; todo efeito tem sua causa." O acaso é apenas o nome dado a uma lei desconhecida.</p>
-        </div>
-        <div class="info-item" style="grid-column: 1 / -1;">
-            <h3>7. Gênero</h3>
-            <p>"O Gênero está em tudo; tudo tem os seus princípios masculino e feminino." A criação exige a união destas duas energias.</p>
-        </div>
-    </div>
+    </section>
 
-    <section id="leis-karma" class="esp-section"></section>
-    <h2>As Leis do Karma</h2>
-    <p>O Karma não é um sistema de punição, mas sim a <strong>Lei de Causa e Efeito</strong> em operação. No Instinto Superior, entendemos o Karma como uma força educativa que nos ensina a responsabilidade sobre cada ação, pensamento e palavra. Nada é por acaso; tudo é retorno.</p>
+    <!-- SEÇÃO: LEIS DO KARMA -->
+    <section id="leis-karma" class="esp-section">
+        <h2><i class="fa-solid fa-wheel-of-dharma"></i> As Leis Universais do Karma</h2>
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Meditação e Causa e Efeito" class="section-banner">
+        
+        <p>Ao contrário da visão ocidentalizada, o Karma não funciona como um tribunal cósmico focado em punição ou recompensa. Ele é a própria <strong>Lei de Causa e Efeito</strong> operando no campo moral e espiritual. Sob a ótica do Instinto Superior, compreendemos o Karma como uma força estritamente educativa e pedagógica, projetada para nos trazer autorresponsabilidade.</p>
 
-    <div class="info-grid">
-        <div class="info-item">
-            <h3>A Grande Lei</h3>
-            <p>"Colhemos o que plantamos." Se desejamos felicidade e amor, devemos gerar essas frequências para o mundo primeiro.</p>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3><i class="fa-solid fa-seedling"></i> A Grande Lei</h3>
+                <p>"Colhemos exatamente o que plantamos." A energia que você emana em pensamentos, palavras e atos é a assinatura energética que dita a natureza dos eventos que retornarão à sua vida.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Lei da Criação</h3>
+                <p>O universo não responde a desejos passivos, ele responde à ação consciente. Somos co-criadores ativos do nosso destino através da união indissolúvel entre foco mental e força de vontade.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-handshake"></i> Lei da Responsabilidade</h3>
+                <p>O mundo exterior funciona como um espelho implacável do nosso mundo interior. Se há caos, conflito ou estagnação ao seu redor, é um indicativo de que há áreas internas negligenciadas clamando por transformação.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-link"></i> Lei da Conexão</h3>
+                <p>No tear cósmico, tudo está interligado. O seu passado determinou o seu presente, e as micro-escolhas que você faz exatamente agora estão costurando a tapeçaria do seu futuro iminente.</p>
+            </div>
         </div>
-        <div class="info-item">
-            <h3>Lei da Criação</h3>
-            <p>A vida não acontece sozinha, ela requer a nossa participação. Somos co-criadores do nosso destino através do foco e da vontade.</p>
-        </div>
-        <div class="info-item">
-            <h3>Lei da Responsabilidade</h3>
-            <p>Sempre que algo está errado na nossa vida, há algo de errado em nós. Nós somos o espelho do que nos rodeia.</p>
-        </div>
-        <div class="info-item">
-            <h3>Lei da Conexão</h3>
-            <p>O passado, o presente e o futuro estão todos conectados. O primeiro passo de uma jornada é tão importante quanto o último.</p>
-        </div>
-    </div>
 
-    <div class="highlight-box">
-        "Karma é ação. Cada movimento que fazes gera uma onda que, inevitavelmente, voltará à sua origem. Dominar o Karma é dominar as próprias escolhas."
-    </div>
-
-    <section id="yin-yang" class="esp-section"></section>
-    <h2>Yin e Yang: A Dualidade Universal</h2>
-    <p>Originário do Taoismo, o conceito de <strong>Yin e Yang</strong> descreve as duas forças fundamentais, opostas e complementares, que compõem tudo o que existe no universo. Nenhuma força é superior à outra; a vida floresce apenas onde existe o equilíbrio perfeito entre elas.</p>
-
-    <div class="info-grid">
-        <div class="info-item" style="border-left: 4px solid #fff;">
-            <h3>Yin (O Princípio Feminino)</h3>
-            <p>Representa a escuridão, a lua, a passividade, a intuição e o repouso. É a energia que acolhe, nutre e planeia no silêncio.</p>
+        <div class="highlight-box">
+            "Karma significa ação em sânscrito. Cada movimento físico ou mental gera uma onda expansiva que inevitavelmente buscará o seu ponto de origem. Dominar o Karma é assumir o leme das próprias escolhas."
         </div>
-        <div class="info-item" style="border-left: 4px solid var(--primary);">
-            <h3>Yang (O Princípio Masculino)</h3>
-            <p>Representa a luz, o sol, a atividade, a lógica e o movimento. É a energia que executa, protege e expande para o exterior.</p>
+    </section>
+
+    <!-- SEÇÃO: YIN E YANG -->
+    <section id="yin-yang" class="esp-section">
+        <h2><i class="fa-solid fa-circle-half-stroke"></i> Yin e Yang: A Dualidade Primordial</h2>
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" alt="Equilíbrio da Natureza" class="section-banner">
+        
+        <p>Nascido no âmago da filosofia taoista, o conceito de <strong>Yin e Yang</strong> ilustra as duas forças arquetípicas fundamentais que sustentam a dinâmica da vida. Elas não são opostas no sentido de rivalidade, mas sim forças complementares necessárias para gerar o movimento e a transformação contínua do cosmos.</p>
+
+        <div class="info-grid">
+            <div class="info-item" style="border-left: 4px solid #ffffff;">
+                <h3>Yin (O Princípio Receptivo)</h3>
+                <p>Associado à escuridão, à Lua, ao elemento água, à passividade fértil, à intuição e à introspecção profunda. É a energia magnética que acolhe, metaboliza, nutre e planeja no silêncio do ser.</p>
+            </div>
+            <div class="info-item" style="border-left: 4px solid var(--primary);">
+                <h3>Yang (O Princípio Ativo)</h3>
+                <p>Associado à luz, ao Sol, ao elemento fogo, ao movimento expansivo, à lógica linear e à projeção. É a energia elétrica que executa, demarca limites, protege e desbrava o mundo externo.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="highlight-box" style="text-align: center;">
-        <p><strong>A Semente no Oposto:</strong> Repare que no símbolo do Taiji (o círculo do Yin/Yang), existe um ponto branco no preto e um ponto preto no branco. Isso ensina que nada é absoluto: o descanso (Yin) contém o potencial para a ação (Yang), e a luz sempre traz consigo a sombra.</p>
-    </div>
-
-    <section id="historia-buda" class="esp-section"></section>
-    <h2>A Jornada de Siddhartha: O Despertar do Buda</h2>
-    <p>A história de <strong>Siddhartha Gautama</strong> é a jornada da superação do sofrimento humano. Nascido como um príncipe cercado de luxos, Siddhartha abdicou de tudo ao confrontar a velhice, a doença e a morte, buscando uma resposta para a dor da existência.</p>
-    
-    <div class="highlight-box">
-        "Nem o luxo extremo, nem a privação severa. O caminho para a verdade reside no <strong>Caminho do Meio</strong> — o equilíbrio entre todos os opostos."
-    </div>
-
-    <p>Após anos de meditação profunda sob a árvore Bodhi, ele alcançou o estado de <strong>Nirvana</strong>, tornando-se o "Buda" (Aquele que Despertou). Ele não se proclamou um deus, mas sim um mestre que provou que qualquer ser humano, através da disciplina mental e da compaixão, pode quebrar o ciclo de ilusões e atingir a consciência suprema.</p>
-
-    <div class="info-grid">
-        <div class="info-item">
-            <h3>As 4 Nobres Verdades</h3>
-            <p>Buda ensinou que a vida contém sofrimento, que a origem do sofrimento é o apego, que o sofrimento pode ter fim e que o caminho para isso é a conduta ética e a meditação.</p>
+        <div class="highlight-box" style="text-align: center;">
+            <p><strong>A Semente Mutante:</strong> Observe que no símbolo tradicional do Taiji (o círculo dinâmico), há um ponto de cor oposta em cada extremidade. Isso nos ensina que nada é estático ou absoluto: o ápice do repouso (Yin) dá origem ao movimento (Yang), assim como o dia mais brilhante traz em si o germe da noite.</p>
         </div>
-    </div>
+    </section>
 
-    <section id="quiromancia" class="esp-section"></section>
-    <h2>Quiromancia: A Escrita do Destino</h2>
-    <p>A <strong>Quiromancia</strong> é a arte milenar de ler as linhas e os montes da palma da mão para compreender a personalidade e as tendências de vida de um indivíduo. No esoterismo sério, a mão é vista como um terminal nervoso conectado diretamente ao cérebro, refletindo o nosso mundo interno.</p>
+    <!-- SEÇÃO: JORNADA DE BUDHA -->
+    <section id="historia-buda" class="esp-section">
+        <h2><i class="fa-solid fa-dharmachakra"></i> A Jornada de Siddhartha: O Despertar do Buda</h2>
+        <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=1200&q=80" alt="Estatua de Buda em Meditação" class="section-banner">
+        
+        <p>A saga de <strong>Siddhartha Gautama</strong> personifica a busca universal pela transcendência do sofrimento. Nascido sob a promessa de reinar em um palácio blindado contra as dores do mundo, o jovem príncipe abdicou de suas riquezas e títulos ao cruzar os portões e testemunhar as quatro verdades da condição humana: a velhice, a doença, a transcendência espiritual e a morte.</p>
+        
+        <div class="highlight-box">
+            "Nem o ascetismo extremo que debilita o corpo, nem o hedonismo desenfreado que cega a alma. O portal para a iluminação se abre exclusivamente no <strong>Caminho do Meio</strong> — o ponto de equilíbrio dinâmico e equidistante dos extremos."
+        </div>
 
-    <div class="info-grid">
-        <div class="info-item">
-            <h3>Linha da Vida</h3>
-            <p>Não indica quanto tempo viverá, mas sim a <strong>vitalidade</strong>, a energia física e a qualidade das experiências que terá ao longo da jornada.</p>
-        </div>
-        <div class="info-item">
-            <h3>Linha da Cabeça</h3>
-            <p>Revela a forma como processa a lógica, a inteligência e o foco mental. Indica se a pessoa é mais prática ou criativa.</p>
-        </div>
-        <div class="info-item">
-            <h3>Linha do Coração</h3>
-            <p>Mapeia a vida emocional, a sensibilidade e a forma como o indivíduo lida com os afetos e relacionamentos.</p>
-        </div>
-        <div class="info-item">
-            <h3>Os Montes</h3>
-            <p>As elevações abaixo dos dedos representam a influência dos astros (Vênus, Júpiter, Saturno, etc.) na constituição do seu caráter.</p>
-        </div>
-    </div>
+        <p>Após anos de buscas austeras e de uma meditação inflexível sob as raízes da árvore Bodhi, Siddhartha decifrou a estrutura mental do ego e alcançou o estado de <strong>Nirvana</strong> (a extinção dos fogos do apego e da ilusão), transmutando-se no Buda. Ele nunca reivindicou o status de divindade, mas sim o de um médico da alma, provando que qualquer ser humano focado pode despertar de Maya (a ilusão).</p>
 
-    <div class="highlight-box" style="background: rgba(255, 214, 51, 0.05); border-left-color: var(--primary-dark);">
-        <p><strong>Dica de Mestre:</strong> A mão esquerda geralmente mostra o nosso potencial herdado (o que trouxemos), enquanto a mão direita mostra o que estamos fazendo com esse potencial no presente.</p>
-    </div>
+        <div class="info-grid">
+            <div class="info-item" style="grid-column: 1 / -1;">
+                <h3><i class="fa-solid fa-heart"></i> O Núcleo do Despertar: As 4 Nobres Verdades</h3>
+                <p>Buda estruturou seu ensinamento em quatro pilares lógicos: 1. A existência carrega a insatisfação (Dukkha); 2. A causa da insatisfação é o apego e o desejo ignorante (Samudaya); 3. O sofrimento cessa quando o apego é extinguido (Nirodha); 4. O método prático para essa extinção é o Nobre Caminho Óctuplo, que prescreve a retidão ética, mental e meditativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO: QUIROMANCIA -->
+    <section id="quiromancia" class="esp-section">
+        <h2><i class="fa-solid fa-hand"></i> Quiromancia: A Cartografia do Destino nas Mãos</h2>
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80" alt="Mãos e Constelações Místicas" class="section-banner">
+        
+        <p>Longe de ser um truque de adivinhação vulgar, a <strong>Quiromancia</strong> é uma ciência oculta milenar que estuda os sulcos, linhas e relevos carnais da palma da mão. No esoterismo hermético, entende-se que as mãos funcionam como extensões diretas do sistema nervoso central, atuando como um painel holográfico que projeta as sinapses, tendências mentais e traumas da nossa psique profunda.</p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <h3><i class="fa-solid fa-heart-pulse"></i> Linha da Vida</h3>
+                <p>Contrariando os mitos, ela não prevê a data da sua morte. Ela quantifica a sua <strong>vitalidade biológica</strong>, a força do seu sistema imunológico, a resiliência física e a qualidade das âncoras energéticas durante a jornada terrena.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-bolt"></i> Linha da Cabeça</h3>
+                <p>Mapeia a arquitetura cognitiva do indivíduo. O seu comprimento e inclinação revelam como você processa dados, toma decisões sob pressão e se possui uma inclinação mental voltada à lógica analítica ou à criatividade abstrata.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-heart"></i> Linha do Coração</h3>
+                <p>Analisa a topografia emocional do ser. Revela como a pessoa gerencia afetos, vulnerabilidades, dinâmicas de relacionamentos e a capacidade psicológica de expressar empatia ou recolhimento emocional.</p>
+            </div>
+            <div class="info-item">
+                <h3><i class="fa-solid fa-mountain"></i> Os Montes Planetários</h3>
+                <p>As almofadas carnudas localizadas na base dos dedos representam os receptores de frequências astrológicas correspondentes (Monte de Vênus para magnetismo, Júpiter para ambição, Saturno para disciplina), sinalizando traços natos do caráter.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background: rgba(255, 214, 51, 0.03); border-left-color: var(--primary-dark);">
+            <p><strong>Segredo da Leitura Hermética:</strong> A mão não dominante (geralmente a esquerda) codifica o seu mapa genético-espiritual ancestral, ou seja, as ferramentas com as quais você nasceu. A mão dominante (geralmente a direita) registra o que você está fazendo ativamente com esse potencial através do seu livre-arbítrio.</p>
+        </div>
+    </section>
 
 </div>
 
 <footer>
-    &copy; 2026 Instinto Superior - O Caminho da Consciência
+    &copy; 2026 Instinto Superior - O Caminho da Consciência Integral
 </footer>
 
 </body>
