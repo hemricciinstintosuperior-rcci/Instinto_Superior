@@ -8,10 +8,11 @@
         :root {
             --primary: #ffd633;
             --primary-dark: #c9a44c;
-            --bg: #020617;
-            --card-bg: rgba(30, 41, 59, 0.6);
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg: #050505;
+            --card-bg: #0f0f0f;
+            --text: #f0f0f0;
+            --text-muted: #888;
+            --border: #222;
         }
 
         * {
@@ -22,10 +23,8 @@
  
         body {
             font-family: 'Georgia', serif;
-            background-color: #050505;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.8;
         }
 
@@ -81,8 +80,8 @@
         }
 
         .logo-img-placeholder {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             margin: 20px auto;
             display: flex;
             align-items: center;
@@ -102,58 +101,52 @@
         .zodiac-container {
             display: flex;
             flex-direction: column;
-            gap: 50px;
-            max-width: 1100px;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto 100px;
             padding: 0 20px;
         }
         .sign-card {
-            background: #0f0f0f;
-            border: 1px solid #222;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative;
+            transition: border-color 0.3s ease;
         }
         .sign-card:hover { border-color: #d4af37; }
         
         .sign-header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid #333;
             padding-bottom: 20px;
         }
-        .armor-placeholder {
-            width: 300px;
-            height: 300px;
-            border: 2px dashed #d4af37;
+        
+        .sign-title {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-            color: #d4af37;
-            font-weight: bold;
-            flex-shrink: 0;
+            flex-direction: column;
         }
+        
         .sign-title h2 {
-            font-size: 2.4em;
+            font-size: 2.2em;
             color: #d4af37;
             margin: 0;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+        .sign-date { font-style: italic; color: #ffd633; font-size: 1.15em; margin-top: 5px; font-weight: bold; }
+        .coordinate { color: #666; font-size: 0.9em; font-family: monospace; margin-top: 2px; }
 
         .section-title {
             color: #d4af37;
-            font-size: 1.4em;
-            margin-top: 30px;
-            border-left: 4px solid #d4af37;
-            padding-left: 15px;
+            font-size: 1.3em;
+            margin-top: 25px;
+            border-left: 3px solid #d4af37;
+            padding-left: 12px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+        .text-block { margin-top: 8px; margin-bottom: 20px; text-align: justify; color: #ccc; }
 
         footer {
             text-align: center;
@@ -162,11 +155,6 @@
             border-top: 1px solid #333;
             color: #d4af37;
         }
-
-        @media (max-width: 768px) {
-            .sign-header { flex-direction: column; text-align: center; }
-            .armor-placeholder { width: 100%; height: 200px; }
-        }
     </style>
 </head>
 <body>
@@ -174,26 +162,15 @@
 <header>
     <nav>
         <a href="index.html">Início & Histórias</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="midia.html">Vídeos & Músicas</a>
         <a href="numerologia.html">Numerologia</a>
         <a href="esoterismo.html">Espiritualidade</a>
-        
-
-    </nav>
-</header>
-
-    <header>
-    <nav>
         <a href="astrologia.html">Astrologia Tropical</a>
-        <a href="astrologiamaia.html">Astrologia Maia </a>
-        <a href="astrologiaegipicia.html">Astrologia Egípcia </a>
-        <a href="astrologiachina.html">Astrologia Chinesa</a>
-        <a href="astrologiacelta.html">Astrologia Celta</a>
-        <a href="astrologiavedica.html">Astrologia Vedica</a>
-        <a href="astrologiacosmica.html">Astrologia Cosmica</a>
-        <a href="astrologiaPersa.html">Astrologia Persa</a>
-        
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+        <a href="astrologia-vedica.html">Astrologia Védica</a>
+        <a href="astrologia-galactica.html" style="color: var(--primary);">Astrologia Galáctica</a>
     </nav>
 </header>
 
@@ -205,7 +182,7 @@
 
     <section class="intro">
         <h1>Astrologia Cósmica e Galáctica</h1>
-        <p>A Astrologia Galáctica expande nossa visão para além dos limites do sistema solar tradicional, sintonizando a consciência com os grandes centros de emanação estelar do universo profundo. Cada quadrante atua como um farol de ativação vibracional para as sementes estelares encarnadas na Terra. Explore como a sua **Energia Divina (Sol)**, o seu **Fluxo Emocional (A Lua)** e a sua **Missão de Alma (Ascendente)** se alinham com as origens do cosmos profundo.</p>
+        <p>A Astrologia Galáctica mapeia os momentos exatos em que a Terra e o nosso Sol local alinham-se matematicamente com os grandes centros de emanação estelar do universo profundo. As datas abaixo representam o ápice anual da conjunção solar com esses quadrantes. Explore como a sua **Energia Divina (Sol)**, o seu **Fluxo Emocional (A Lua)** e a sua **Missão de Alma (Ascendente)** se sintonizam com as origens cósmicas.</p>
     </section>
 
     <div class="zodiac-container">
@@ -213,10 +190,10 @@
         <!-- ARCTURUS -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/arcturus.jpg" alt="Portal Arcturus" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Portal de Arcturus 🌌</h2>
-                    <div class="sign-date">Frequência da Inovação e Geometria Sagrada</div>
+                    <h2>🌌 Portal de Arcturus</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 17 a 23 de Outubro</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 24° 14' LI</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
@@ -230,10 +207,10 @@
         <!-- PLEYADES -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/pleyades.jpg" alt="Constelação das Plêiades" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Alinhamento de Plêiades ✨</h2>
-                    <div class="sign-date">Frequência do Amor Devocional e Harmonia</div>
+                    <h2>✨ Alinhamento de Plêiades</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 21 a 27 de Maio</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 00° 02' GE</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
@@ -247,10 +224,10 @@
         <!-- SIRIUS -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/sirius.jpg" alt="Estrela Sirius" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Vetor de Sirius 🌟</h2>
-                    <div class="sign-date">Frequência da Sabedoria Ancestral e Guardiões</div>
+                    <h2>🌟 Vetor de Sirius</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 04 a 10 de Julho</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 14° 11' CN</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
@@ -264,10 +241,10 @@
         <!-- ANDROMEDA -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/andromeda.jpg" alt="Galáxia de Andrômeda" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Frequência de Andrômeda 🌀</h2>
-                    <div class="sign-date">Frequência da Liberdade Absoluta e Expansão</div>
+                    <h2>🌀 Frequência de Andrômeda</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 17 a 23 de Abril</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 27° 51' AR</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
@@ -281,10 +258,10 @@
         <!-- ORION -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/orion.jpg" alt="Nebulosa de Órion" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Constelação de Órion ⚔️</h2>
-                    <div class="sign-date">Frequência da Alquimia Mental e Polaridade</div>
+                    <h2>⚔️ Constelação de Órion</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 12 a 18 de Junho</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 22° 58' GE</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
@@ -298,10 +275,10 @@
         <!-- CENTAURUS -->
         <div class="sign-card">
             <div class="sign-header">
-                <div class="armor-placeholder"><img src="midia/imagens/centaurus.jpg" alt="Alfa Centauri" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <div class="sign-title">
-                    <h2>Nexo de Centaurus 🏹</h2>
-                    <div class="sign-date">Frequência da Maestria Prática e Integração</div>
+                    <h2>🏹 Nexo de Centaurus</h2>
+                    <div class="sign-date">Ápice de Alinhamento: 16 a 22 de Novembro</div>
+                    <div class="coordinate">Coordenada Galáctica: Lon. 24° 03' ES</div>
                 </div>
             </div>
             <div class="section-title">Energia Divina</div>
