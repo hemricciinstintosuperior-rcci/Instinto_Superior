@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Cósmica e Galáctica - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 2.4em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+        <a href="astrologia-vedica.html">Astrologia Védica</a>
+        <a href="astrologia-galactica.html" style="color: var(--primary);">Astrologia Galáctica</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>ARQUÉTIPOS ESTELARES, PORTAIS MULTIDIMENSIONAIS E FREQUÊNCIAS COSMOLÓGICAS</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Cósmica e Galáctica</h1>
+        <p>A Astrologia Galáctica expande nossa visão para além dos limites do sistema solar tradicional, sintonizando a consciência com os grandes centros de emanação estelar do universo profundo. Cada quadrante atua como um farol de ativação vibracional para as sementes estelares encarnadas na Terra. Explore como a sua **Energia Divina (Sol)**, o seu **Fluxo Emocional (A Lua)** e a sua **Missão de Alma (Ascendente)** se alinham com as origens do cosmos profundo.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <!-- ARCTURUS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/arcturus.jpg" alt="Portal Arcturus" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Portal de Arcturus 🌌</h2>
+                    <div class="sign-date">Frequência da Inovação e Geometria Sagrada</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A emanação arcturiana confere uma mente altamente analítica, inclinada à compreensão de estruturas complexas, arquiteturas tecnológicas e padrões geométricos sagrados. Sua essência divina brilha através do desejo incessante de aperfeiçoar sistemas, curar distorções energéticas e introduzir conceitos de engenharia mental avançada na matéria.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente equilibrado, focado e dotado de uma resiliência mental incomum. O fluxo de Arcturus processa sentimentos através da busca por harmonia matemática e clareza de intenção. Evita o transbordo de dramas emocionais densos, encontrando segurança psíquica na organização de ideias e na manutenção de uma frequência pacífica.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão cósmica é ancorar novas tecnologias de cura e metodologias de design estrutural e evolutivo. O ambiente o percebe como um arquiteto mental lúcido, inovador e profundamente focado no progresso. O desafio reside em equilibrar a pura lógica conceitual com a sensibilidade espontânea do coração humano.</p>
+        </div>
+
+        <!-- PLEYADES -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/pleyades.jpg" alt="Constelação das Plêiades" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Alinhamento de Plêiades ✨</h2>
+                    <div class="sign-date">Frequência do Amor Devocional e Harmonia</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A energia das Plêiades vibra na sintonia da nutrição profunda, das artes refinadas e da diplomacia cósmica. Sua identidade divina manifesta-se no magnetismo gentil, na valorização da beleza estética e cultural e no impulso instintivo de unificar grupos, apaziguar conflitos e semear o amor compassivo por onde passa.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são intensamente empáticos, artísticos e profundamente responsivos à harmonia ambiental. O fluxo emocional pleiadiano absorve nuances afetivas com facilidade e ressente-se profundamente diante de vibrações ásperas ou confrontos agressivos. Encontra segurança na expressão poética e nos laços de afeto sincero.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como um pacificador cultural e um canalizador de frequências artísticas superiores que elevam o padrão vibratório da sociedade. É visto como uma alma acolhedora, sensível e inspiradora. O aprendizado envolve estabelecer limites energéticos firmes para não se dissolver nas necessidades alheias.</p>
+        </div>
+
+        <!-- SIRIUS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/sirius.jpg" alt="Estrela Sirius" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Vetor de Sirius 🌟</h2>
+                    <div class="sign-date">Frequência da Sabedoria Ancestral e Guardiões</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Sirius carrega a linhagem dos guardiões do conhecimento sagrado, dos reis-filósofos e da aplicação prática das leis universais. Sua essência divina exala firmeza moral, liderança focada, determinação inabalável para executar projetos de longo prazo e uma profunda conexão com mistérios antigos da evolução planetária.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente reservado, leal ao extremo e profundamente centrado em um código interno de honra e integridade. O fluxo de Sirius não se abala facilmente por tempestades passionais passageiras; ele guarda suas emoções sob uma estrutura de extrema dignidade e estabilidade protetora para com os seus associados.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é estruturar plataformas de conhecimento sólido, governar com justiça prática e preservar a essência das verdades evolutivas na Terra. O mundo o reconhece como uma base de sustentação confiável e imponente. O desafio consiste em não se fechar em dogmas rígidos, permitindo a flexibilidade criativa.</p>
+        </div>
+
+        <!-- ANDROMEDA -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/andromeda.jpg" alt="Galáxia de Andrômeda" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Frequência de Andrômeda 🌀</h2>
+                    <div class="sign-date">Frequência da Liberdade Absoluta e Expansão</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A assinatura energética de Andrômeda está ligada à quebra definitiva de limitações, à soberania individual e à exploração vanguardista de novas realidades. Sua identidade brilha na originalidade, no pensamento disruptivo multifacetado e no amor incondicional pela liberdade de experimentar a existência sem amarras conceituais.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seu fluxo emocional opera de forma dinâmica, fluida e totalmente independente. Andrômeda necessita de amplos espaços mentais e psíquicos para expandir-se. Desconecta-se instantaneamente quando percebe tentativas de enquadramento, ciúme ou posse, expressando afeto por meio de parcerias livres e trocas intelectuais visionárias.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é impulsionar a libertação de velhos padrões mentais coletivos, abrindo caminhos para a inovação existencial e social. O ambiente o percebe como um catalisador de mudanças, ousado e magnético. O desafio evolutivo é aprender a ancorar suas visões expansivas em bases práticas e duradouras.</p>
+        </div>
+
+        <!-- ORION -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/orion.jpg" alt="Nebulosa de Órion" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Constelação de Órion ⚔️</h2>
+                    <div class="sign-date">Frequência da Alquimia Mental e Polaridade</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Órion traz a força do discernimento agudo, da estratégia cirúrgica e da maestria sobre o plano mental. Nascidos sob este feixe cósmico possuem imenso potencial para decodificar mistérios, solucionar problemas complexos através da pura inteligência focada e transmutar desafios estruturais em conquistas concretas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente analítico, perspicaz e extremamente reservado. O fluxo de Órion costuma passar sentimentos pelo filtro da racionalidade antes de qualquer manifestação externa. Ele busca compreender as mecânicas por trás das reações psicológicas, agindo com frieza estratégica em momentos de crise severa.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é unificar opostos e ensinar o equilíbrio entre a força da ação prática e a profundidade da sabedoria oculta. É visto pela sociedade como um estrategista mental implacável, brilhante e independente. O aprendizado reside em permitir que a vulnerabilidade emocional flua sem a necessidade de controle absoluto.</p>
+        </div>
+
+        <!-- CENTAURUS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/centaurus.jpg" alt="Alfa Centauri" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Nexo de Centaurus 🏹</h2>
+                    <div class="sign-date">Frequência da Maestria Prática e Integração</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A emanação de Centaurus está sintonizada com a cura biológica, a sabedoria da terra em alinhamento com o cosmos e a execução técnica primorosa. Sua identidade exala pragmatismo realizador, conexão profunda com as leis da física e da natureza e uma disposição inata para o trabalho focado em prol do bem-estar planetário.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Estável, discreto e voltado para o apoio concreto e silencioso. O fluxo emocional de Centaurus manifesta-se através do cuidado com o corpo, da dedicação rotineira e da lealdade construída por meio de ações práticas e visíveis. Evita flutuações dramáticas, prezando pela constância e pela paz ambiental.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é ancorar os conhecimentos cósmicos na realidade tangível, atuando como um integrador de sistemas de saúde, ecologia ou ciências aplicadas. O ambiente o enxerga como uma mente realista, confiável e extremamente competente. O desafio consiste em superar o perfeccionismo estrito e aceitar o ritmo natural do tempo.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
