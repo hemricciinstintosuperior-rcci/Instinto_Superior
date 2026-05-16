@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Védica - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 3em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+        <a href="astrologia-vedica.html" style="color: var(--primary);">Astrologia Védica</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>JYOTISH — A CIÊNCIA SAGRADA DA LUZ E DO MAPA DHÁRMICO</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Védica (Sideral)</h1>
+        <p>A Astrologia Védica, ou *Jyotish*, mapeia a posição real e astronômica das estrelas (Zodíaco Sideral) cruzando os registros kármicos da alma. Através dos olhos dos antigos sábios (*Rishis*), cada constelação canaliza as leis do Dharma e do tempo natural. Descubra como a sua **Energia Divina (Sol)**, o seu **Fluxo Emocional (Lua)** e a sua **Missão de Alma (Ascendente)** operam sob a perspectiva dos Vedas.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/mesha.jpg" alt="Mesha" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Mesha (Áries) ♈</h2>
+                    <div class="sign-date">14 de Abril a 14 de Maio</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Governado por Mangala (Marte), Mesha representa o fogo original, a força do guerreiro e a faísca da criação inicial. Sua essência divina exala pioneirismo, coragem inquebrável, liderança assertiva e uma prontidão incansável para desbravar o desconhecido e lutar por suas ambições.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente, Mesha é direto, impetuoso e intensamente apaixonado. Ele não tolera meias-verdades ou manipulações silenciosas. Reage de forma vulcânica quando provocado, mas perdoa com extrema rapidez, buscando sempre proteger com garras firmes as pessoas do seu círculo íntimo.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão dhármica é iniciar movimentos inovadores e purificar a vontade através da ação correta. O mundo o enxerga como uma força realizadora e veloz. O desafio do seu Instinto Superior é dominar a paciência estratégica para não queimar pontes desnecessariamente.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/vrishabha.jpg" alt="Vrishabha" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Vrishabha (Touro) ♉</h2>
+                    <div class="sign-date">15 de Maio a 14 de Junho</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Regido por Shukra (Vênus), Vrishabha é a fundação da estabilidade material, do refinamento estético e da preservação. Sua identidade brilha pela solidez prática, lealdade inflexível e um talento inato para gerenciar recursos, construir conforto e apreciar as artes e os prazeres da matéria.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são profundos, calmos e processados de maneira constante. Vrishabha encontra segurança afetiva em laços duradouros e na estabilidade rotineira. Ele protege ferozmente sua intimidade e possui uma paciência milenar, acumulando mágoas antes de demonstrar qualquer descontentamento.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é dar base concreta às ideias do mundo, gerando sustentabilidade social e familiar. É visto como um porto seguro de integridade e bom gosto. O aprendizado evolutivo reside em vencer o apego excessivo a posses e superar o medo paralisante de transformações inevitáveis.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/mithuna.jpg" alt="Mithuna" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Mithuna (Gêmeos) ♊</h2>
+                    <div class="sign-date">15 de Junho a 15 de Julho</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Sob o comando de Budha (Mercúrio), Mithuna personifica o intelecto ágil, a curiosidade sem limites e o poder da comunicação de massas. Sua essência divina foca no intercâmbio de ideias, na diplomacia refinada, no comércio e em uma versatilidade mental brilhante para solucionar charadas complexas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente estimulado por trocas intelectuais, Mithuna foge de ambientes sufocantes ou densos demais. Ele processa seus sentimentos de forma cerebral, racionalizando suas dores. Apresenta uma fachada sociável e brincalhona, embora guarde uma profunda necessidade de ser compreendido em sua dualidade.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é tecer pontes entre diferentes conhecimentos e espalhar verdades úteis pela palavra. O ambiente o percebe como alguém magnético, inteligente e cheio de recursos. O desafio consiste em focar suas energias difusas e aprofundar suas raízes internas.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/karka.jpg" alt="Karka" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Karka (Câncer) ♋</h2>
+                    <div class="sign-date">16 de Julho a 16 de Agosto</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Governado por Chandra (A Lua), Karka é o arquétipo do cuidador, do curador e da nutrição emocional da humanidade. Sua essência divina brilha através de uma sensibilidade psíquica aguçada, empatia real, amor devocional e uma capacidade inata de acolher e proteger o clã familiar.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">As emoções de Karka são de natureza oceânica e profundamente ligadas aos ciclos lunares. Ele sente o ambiente de forma visceral e pode se fechar defensivamente em seu casco protetor quando capta qualquer agressividade externa. Busca conexões pautadas no afeto puro, na lealdade e na segurança íntima.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é ancorar a compaixão e lembrar o mundo da importância da base emocional e das raízes espirituais. A sociedade o vê como o conselheiro generoso e protetor. O desafio está em não carregar o fardo do mundo nas costas e evitar o vitimismo kármico.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/simha.jpg" alt="Simha" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Simha (Leão) ♌</h2>
+                    <div class="sign-date">17 de Agosto a 16 de Setembro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Regido por Surya (O Sol), Simha exala o poder real, a autoridade legítima, a dignidade e a liderança centralizadora. Nascidos sob este rashi possuem uma presença imponente, magnânima e dotada de um magnetismo nobre focado em gerenciar grandes propósitos e proteger os dependentes.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente generoso, leal e extremamente orgulhoso. Simha ama de forma grandiosa e dramática, necessitando que seus esforços de proteção e criação sejam amplamente reverenciados. Ele sofre profundamente com a ingratidão, a traição ou o desrespeito ao seu código de honra.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão dhármica é inspirar os homens a brilharem com soberania, integridade e coragem criativa. O mundo o percebe como o líder natural e imponente. O aprendizado do seu Instinto Superior é lapidar o ego, transformando a autoridade em puro serviço espiritual desinteressado.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/kanya.jpg" alt="Kanya" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Kanya (Virgem) ♍</h2>
+                    <div class="sign-date">17 de Setembro a 16 de Outubro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Também sob a regência de Budha (Mercúrio), Kanya traz a energia da discriminação intelectual (*Buddhi*), da purificação e do serviço meticuloso. Sua identidade divina manifesta-se através da inteligência analítica extrema, do detalhismo técnico, da cura através da rotina e da busca pela perfeição estrutural.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são ultra-reservados, tímidos e blindados por uma mente crítica constante. Kanya busca ordem cênica e paz mental; a rispidez ou o caos ambiental quebram gravemente seu equilíbrio emocional. Ele expressa amor fornecendo auxílio prático e conselhos cirúrgicos.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é catalogar o conhecimento útil, curar através da precisão e trazer discernimento realista aos planos humanos. O ambiente o reconhece como alguém reto, compenetrado e inteligentíssimo. O desafio consiste em superar o criticismo ácido e paralisante.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/tula.jpg" alt="Tula" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Tula (Libra) ♎</h2>
+                    <div class="sign-date">17 de Outubro a 15 de Novembro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Regido por Shukra (Vênus), Tula representa a balança cósmica, a justiça de mercado, as parcerias estratégicas e o refinamento social. Sua identidade exala diplomacia impecável, charme magnético, senso político apurado e um forte desejo de trazer beleza, harmonia e equilíbrio às relações humanas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Vibrante e intensamente dependente da paz relacional. O fluxo emocional de Tula desestabiliza-se em ambientes barulhentos, feios ou injustos. Ele busca o belo, a arte e o diálogo aberto para nutrir seus afetos, embora possa camuflar insatisfações internas para evitar confrontos diretos.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é conciliar partes divididas e estabelecer acordos justos na sociedade. É visto como uma alma elegante, sedutora e poética. O desafio evolutivo reside em desenvolver firmeza interna, superando a indecisão crônica e o medo de desagradar.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/vrishchika.jpg" alt="Vrishchika" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Vrishchika (Escorpião) ♏</h2>
+                    <div class="sign-date">16 de Novembro a 15 de Dezembro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Governado por Mangala (Marte) e associado a Ketu (o nodo sul kármico), Vrishchika rege os grandes mistérios ocultos, a pesquisa profunda e a transmutação espiritual. Sua identidade divina é intensa, magnética, estratégica e dotada de um poder de resiliência inabalável diante de crises.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são viscerais, recônditos e marcados por um desejo profundo de fusão de almas e lealdade absoluta. Vrishchika capta os segredos mais íntimos do ambiente sem esforço, mantendo suas próprias cartas emocionais escondidas. Quando ferido, passa por crises intensas de renovação.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é desvelar verdades ocultas e atuar como o cirurgião das sombras, promovendo cura e evolução espiritual profunda. O mundo o enxerga como alguém enigmático, poderoso e impetuoso. O desafio do seu Instinto Superior é transmutar o rancor e o controle desconfiado em pura fé.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/dhanu.jpg" alt="Dhanu" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Dhanu (Sagitário) ♐</h2>
+                    <div class="sign-date">16 de Dezembro a 13 de Janeiro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Sob a benção de Guru (Júpiter), Dhanu personifica as altas filosofias, as leis sagradas (*Dharma*) e o otimismo espiritual expansivo. Sua essência divina traz retidão moral, sabedoria professoral, sede por grandes jornadas intelectuais e uma fé inabalável nas ordens universais.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente independente, idealista e franco ao extremo. Dhanu expressa seus afetos de forma entusiasmada e honesta, detestando cobranças mesquinhas ou rotinas que firam sua liberdade de pensar e agir. Ele gerencia as dores buscando horizontes amplos e focado no crescimento existencial.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como o farol de sabedoria, justiça e motivação para a humanidade. A sociedade o reconhece como um espírito livre, sábio e nobre. O aprendizado de alma consiste em desenvolver realismo prático e aterrar suas teorias espirituais na vida material cotidiana.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/makara.jpg" alt="Makara" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Makara (Capricórnio) ♑</h2>
+                    <div class="sign-date">14 de Janeiro a 12 de Fevereiro</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Governado por Shani (Saturno), Makara representa a estrutura kármica, a disciplina inflexível, o tempo e a escalada paciente em direção ao topo material. Sua identidade divina brilha através do pragmatismo, do senso de dever impecável, da organização e de uma resiliência indestrutível.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são extremamente controlados, frios na aparência e processados em absoluto silêncio. Makara encontra estabilidade emocional ao atuar como a rocha protetora e provedora de sua família. Detesta demonstrações públicas de fraqueza e valoriza a integridade construída com esforço.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é edificar instituições sólidas, trazer realismo prático e dar ordem estável aos planos humanos. O mundo o percebe como um profissional brilhante, sério e de respeito inquestionável. O desafio evolutivo está em suavizar a rigidez crítica e acolher a doçura da vida.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/kumbha.jpg" alt="Kumbha" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Kumbha (Aquário) ♒</h2>
+                    <div class="sign-date">13 de Fevereiro a 13 de Março</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Também sob o comando de Shani (Saturno) e associado a Rahu (o nodo norte), Kumbha representa o intelecto revolucionário, as redes coletivas de conhecimento e as grandes causas humanitárias. Sua essência divina foca na quebra de dogmas obsoletos, em visões científicas vanguardistas e no progresso do grupo.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente independente e de natureza puramente cerebral. Kumbha decodifica o afeto através de conceitos lógicos e valores filosóficos elevados. Ele foge de dramas emocionais densos ou possessivos, valorizando a amizade verdadeira, a transparência e o companheirismo intelectual.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é expandir a consciência social e trazer inovações conceituais e tecnológicas para a civilização. O ambiente o enxerga como uma mente genial, excêntrica e original. O desafio de crescimento consiste em conectar-se com o coração, superando o distanciamento frio.</p>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/meena.jpg" alt="Meena" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Meena (Peixes) ♓</h2>
+                    <div class="sign-date">14 de Março a 13 de Abril</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Regido por Guru (Júpiter), Meena encerra a roda zodiacal védica trazendo a energia de *Moksha* (libertação espiritual), da dissolução do ego e do misticismo transcendental. Sua identidade exala imaginação sem fronteiras, sensibilidade artística superior, espiritualidade pura e compaixão cósmica.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são oceânicos, vulneráveis e de uma empatia psíquica profunda. Meena absorve as dores e alegrias do ambiente como uma esponja. Ele busca conexões de alma e fusão devocional em seus relacionamentos, necessitando de períodos de isolamento silencioso para restaurar suas energias.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão dhármica é ensinar o desapego das ilusões da matéria e canalizar a beleza dos planos espirituais através da arte, da cura intuitiva ou da fé. É visto como uma alma pura, amorosa e misteriosa. O desafio consiste em erguer barreiras psíquicas firmes, evitando o escapismo.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
