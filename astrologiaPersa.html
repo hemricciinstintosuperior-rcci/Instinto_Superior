@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrologia Persa - Instinto Superior</title>
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #050505;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+        
+        .logo-area {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .portal-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo-img-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 50%;
+        }
+
+        .intro {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px;}
+        
+        .zodiac-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .sign-card {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .sign-card:hover { border-color: #d4af37; }
+        
+        .sign-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .armor-placeholder {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #d4af37;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .sign-title h2 {
+            font-size: 2.4em;
+            color: #d4af37;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .sign-date { font-style: italic; color: #888; font-size: 1.2em; }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-top: 30px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+        .text-block { margin-bottom: 25px; text-align: justify; color: #ccc; }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid #333;
+            color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .sign-header { flex-direction: column; text-align: center; }
+            .armor-placeholder { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="numerologia.html">Numerologia</a>
+        <a href="esoterismo.html">Espiritualidade</a>
+        <a href="astrologia.html">Astrologia Tropical</a>
+        <a href="astrologia-egipcia.html">Astrologia Egípcia</a>
+        <a href="astrologia-maia.html">Astrologia Maia</a>
+        <a href="astrologia-chinesa.html">Astrologia Chinesa</a>
+        <a href="astrologia-celta.html">Astrologia Celta</a>
+        <a href="astrologia-vedica.html">Astrologia Védica</a>
+        <a href="astrologia-galactica.html">Astrologia Galáctica</a>
+        <a href="astrologia-persa.html" style="color: var(--primary);">Astrologia Persa</a>
+    </nav>
+</header>
+
+    <div class="portal-header">
+        <div class="logo-area">INSTINTO SUPERIOR</div>
+        <div class="logo-img-placeholder"><img src="midia/imagens/INSTINTOFOTOO.png" alt="Instinto Superior" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <p>OS QUATRO GUARDIÕES CELESTIAIS E AS ESTRELAS REAIS DA PERSIA</p>
+    </div>
+
+    <section class="intro">
+        <h1>Astrologia Persa (Zoroastriana)</h1>
+        <p>A Astrologia Persa Antiga fundamenta-se nos ciclos do tempo e no poder das Quatro Estrelas Reais, consideradas os pilares e sentinelas cósmicas do universo. Este sistema preditivo e dinâmico revela os grandes decretos do destino individual através de testes de caráter e retidão. Descubra como a sua **Energia Divina**, o seu **Fluxo Emocional** e a sua **Missão de Alma** interagem com as forças dos Guardiões do Império Celestial.</p>
+    </section>
+
+    <div class="zodiac-container">
+
+        <!-- ALDEBARAN -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/aldebaran.jpg" alt="Guardião do Leste" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Aldebaran — Guardião do Leste 🏹</h2>
+                    <div class="sign-date">Sentinela da Primavera e da Conquista</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Sob a emanação de Aldebaran, a essência divina manifesta-se através de uma energia pioneira, força física e de vontade avassaladoras, além de uma integridade inabalável. Indivíduos tocados por este guardião brilham intensamente ao liderar novos projetos, desbravar cenários desafiadores e inspirar outros pelo exemplo de bravura e ação reta.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são impetuosos, intensos e pautados por uma profunda necessidade de autenticidade. O fluxo emocional de Aldebaran reage com indignação perante injustiças ou desonestidade, mas encontra estabilidade na proteção feroz de seus aliados e em relacionamentos transparentes, onde a palavra empenhada tem valor de lei.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão de alma é abrir caminhos e alcançar grande sucesso no plano material sem corromper seus valores morais. O ambiente o enxerga como uma força de liderança nata, realizadora e destemida. O teste evolutivo imposto por este guardião é dominar a ambição desmedida e cultivar a paciência nas batalhas da vida.</p>
+        </div>
+
+        <!-- REGULUS -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/regulus.jpg" alt="Guardião do Norte" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Regulus — Guardião do Norte 👑</h2>
+                    <div class="sign-date">Sentinela do Verão e da Glória Real</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Regulus confere uma identidade de nobreza nata, magnetismo imponente e grande senso de justiça e autoridade benévola. Sua essência divina brilha em posições de alto comando, onde o indivíduo é chamado a governar grandes propósitos, organizar comunidades e estender generosamente sua proteção aos liderados.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente magnânimo, orgulhoso e dotado de uma lealdade incondicional. O fluxo de Regulus necessita de respeito mútuo e clareza nas relações afetivas. Ele sofre silenciosamente com a ingratidão ou traições de lealdade, mantendo sempre uma postura digna e magnética mesmo diante de profundas crises íntimas.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão cósmica é manifestar o verdadeiro poder através do serviço e da generosidade, liderando pela retidão da alma. O mundo o percebe como um pilar de integridade e realeza espiritual. O grande teste do seu Instinto Superior é vencer a tentação do orgulho e da vingança, mantendo a clemência do soberano.</p>
+        </div>
+
+        <!-- ANTARES -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/antares.jpg" alt="Guardião do Oeste" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Antares — Guardião do Oeste 🦂</h2>
+                    <div class="sign-date">Sentinela do Outono e da Alquimia Interna</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">A emanação de Antares confere uma energia profundamente estratégica, magnética e voltada à transmutação de crises. Sua identidade divina manifesta-se através de um foco inquebrável, capacidade cirúrgica de ler os segredos ocultos do ambiente e uma resiliência lendária para renascer após profundas perdas.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Seus sentimentos são oceânicos, misteriosos e processados nas camadas mais profundas do ser. Antares busca conexões emocionais de fusão absoluta e lealdade cega. É extremamente intuitivo, captando as intenções camufladas ao seu redor e agindo com mistério para resguardar sua vulnerabilidade.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão de alma é explorar os mistérios ocultos e purificar os desejos através da alquimia da autotransformação. A sociedade o reconhece como alguém enigmático, poderoso e impetuoso. O teste kármico essencial é aprender a perdoar, transformando a desconfiança ou o desejo de controle em pura fé libertadora.</p>
+        </div>
+
+        <!-- FOMALHAUT -->
+        <div class="sign-card">
+            <div class="sign-header">
+                <div class="armor-placeholder"><img src="midia/imagens/fomalhaut.jpg" alt="Guardião do Sul" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="sign-title">
+                    <h2>Fomalhaut — Guardião do Sul 🌊</h2>
+                    <div class="sign-date">Sentinela do Inverno e da Inspiração Mística</div>
+                </div>
+            </div>
+            <div class="section-title">Energia Divina</div>
+            <p class="text-block">Fomalhaut traz a energia da transcendência espiritual, das visões proféticas e do gênio criativo e artístico superior. Nascidos sob este raio celestial possuem uma essência divina idealista, sintonizada com os planos sutis do universo e impulsionada a expressar a beleza, o misticismo e as artes revolucionárias.</p>
+            <div class="section-title">Fluxo Emocional</div>
+            <p class="text-block">Emocionalmente sensível, poético e dotado de imensa empatia cósmica. O fluxo de Fomalhaut absorve as energias invisíveis do ambiente de forma instantânea. Ele busca conexões pautadas em ideais elevados e na partilha espiritual pura, necessitando de momentos de solidão reflexiva para restabelecer suas defesas psíquicas.</p>
+            <div class="section-title">Missão de Alma</div>
+            <p class="text-block">Sua missão é atuar como o canalizador dos sonhos universais, elevando a consciência coletiva através da arte, da espiritualidade e do idealismo. O ambiente o percebe como um sábio idealista e inspirado. O grande teste evolutivo consiste em fincar os pés na realidade prática, evitando o escapismo ou as ilusões materiais.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INSTINTO SUPERIOR - PORTAL DE ASTROLOGIA</p>
+    </footer>
+
+</body>
+</html>
