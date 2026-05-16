@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminhos da Fé | Religiões e Espiritualidade Mundial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffd633;
+            --primary-dark: #c9a44c;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #020617);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            width: 100%;
+            background: #111116;
+            border-bottom: 2px solid var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        header nav a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            background: rgba(201, 164, 76, 0.15);
+            color: var(--primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        .hero img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .content-section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px 40px 20px;
+        }
+
+        .intro-text {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 214, 51, 0.05);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CARDS DE INTRODUÇÃO */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 51, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* SEÇÃO CENTRAL DE HISTÓRIAS (ABAS) */
+        .historias-container {
+            width: 100%;
+            max-width: 960px;
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 214, 51, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .historias-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            position: relative;
+        }
+
+        .historias-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* MENU DE ABAS */
+        .tabs-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .tab-button {
+            background: rgba(51, 65, 85, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #222;
+        }
+
+        .tab-button:hover {
+            background: rgba(255, 214, 51, 0.1);
+            color: var(--text);
+        }
+
+        .tab-button.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        /* CONTEÚDO DAS ABAS */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .bio-header h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .bio-header p {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        /* AJUSTE SOLICITADO: Imagem na parte de cima da explicação */
+        .profile-wrapper-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .profile-pic-top {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid var(--primary-dark);
+            background: #222;
+        }
+
+        .bio-desc {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            line-height: 1.7;
+            color: #e2e8f0;
+            width: 100%;
+        }
+
+        /* CAIXAS E ELEMENTOS ESTILIZADOS DE TEXTO */
+        .timeline-box {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .timeline-date {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .box-destaque {
+            border-left: 4px solid var(--primary-dark);
+            background: rgba(201, 164, 76, 0.05);
+            padding: 20px;
+            border-radius: 0 14px 14px 0;
+            margin: 25px 0;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .box-vintage {
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px dashed rgba(255, 214, 51, 0.3);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 25px 0;
+            line-height: 1.7;
+        }
+
+        .box-vintage h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .grid-dois-campos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .campo-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+
+        .campo-item h4 {
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .campo-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* RODAPÉ */
+        footer {
+            width: 100%;
+            background: #111116;
+            text-align: center;
+            padding: 25px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .historias-container { padding: 25px 15px; }
+            .tab-button { width: 100%; justify-content: center; }
+            .profile-pic-top { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Início & Histórias</a>
+        <a href="monoteistas.html">Monoteísmo</a>
+        <a href="orientais.html">Filosofias Orientais</a>
+        <a href="ancestrais.html">Tradições Ancestrais</a>
+        <a href="cronologia.html">Linha do Tempo</a>
+    </nav>
+</header>
+
+    <!-- Apresentação Hero -->
+    <section class="hero">
+        <img src="https://via.placeholder.com/150" alt="Logo Sagrado e Fé">
+        <h1>CAMINHOS DA FÉ E CONSCIÊNCIA</h1>
+        <p>História • Filosofia • Transcendência</p>
+    </section>
+
+    <!-- Conteúdo Introdutório Principal -->
+    <main class="content-section">
+        <div class="intro-text">
+            <p>Desde os primórdios da humanidade, a busca pelo divino e pelo sentido da existência moldou civilizações, códigos morais e impérios. Através dos séculos, as <span class="highlight">Religiões Globais</span> manifestaram-se como bússolas espirituais para bilhões de pessoas. Compreender essas tradições é respeitar a rica tapeçaria da história e do pensamento metafísico humano.</p>
+        </div>
+
+        <div class="tools-grid">
+            <div class="card">
+                <h3>Tradições Abraâmicas</h3>
+                <p>Originadas no Oriente Médio, compartilham a linhagem do patriarca Abraão. Focadas no monoteísmo ético, na revelação de textos sagrados e no cumprimento de mandamentos divinos que guiam a conduta na Terra e determinam o destino da alma.</p>
+            </div>
+
+            <div class="card">
+                <h3>Tradições Dharmicas</h3>
+                <p>Nascidas no subcontinente indiano, centram-se nas leis universais do Dharma, do Karma e no ciclo contínuo de renascimentos (Samsara). Buscam a libertação espiritual através do autoconhecimento, meditação e desapego material.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====================================================
+         SEÇÃO CENTRAL DE RELIGIÕES INTEGRADA
+         ==================================================== -->
+    <section class="historias-container">
+        <h2 class="historias-title">Grandes Tradições Espirituais</h2>
+        
+        <!-- Menu de Navegação por Abas -->
+        <div class="tabs-menu">
+            <button class="tab-button active" onclick="openTab(event, 'cristianismo')">
+                <img src="https://via.placeholder.com/24" alt="Cristianismo"> Cristianismo
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'islamismo')">
+                <img src="https://via.placeholder.com/24" alt="Islamismo"> Islamismo
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'hinduismo')">
+                <img src="https://via.placeholder.com/24" alt="Hinduísmo"> Hinduísmo
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'budismo')">
+                <img src="https://via.placeholder.com/24" alt="Budismo"> Budismo
+            </button>
+        </div>
+
+        <!-- ABA 1: CRISTIANISMO -->
+        <div id="cristianismo" class="tab-content active">
+            <div class="bio-header">
+                <h2>O Cristianismo</h2>
+                <p>A Mensagem de Graça, Sacrifício e Salvação</p>
+            </div>
+            
+            <div class="profile-wrapper-top">
+                <!-- Imagem colada na parte de cima da explicação -->
+                <img src="https://via.placeholder.com/500x250" alt="Imagem Cristianismo" class="profile-pic-top">
+                
+                <div class="bio-desc">
+                    <div class="timeline-box">
+                        <span class="timeline-date">Século I d.C. — O Contexto na Judeia Romana</span>
+                        <strong>O Nascimento da Fé:</strong> O Cristianismo começou como um movimento de renovação espiritual dentro do Judaísmo na província romana da Judeia. Seu fundamento central baseia-se na vida, ensinamentos, morte por crucificação e subsequente ressurreição de Jesus de Nazaré, reconhecido por seus seguidores como o Cristo ou o Messias profetizado pelas escrituras hebraicas.
+                        Após a crucificação de Jesus sob o governo de Pôncio Pilatos, seus apóstolos, liderados por figuras marcantes como Simão Pedro e, posteriormente, pelo convertido Paulo de Tarso, passaram a disseminar a mensagem de salvação para além das fronteiras judaicas, alcançando os gentios em todo o Império Romano.
+                    </div>
+                    
+                    <div class="timeline-box">
+                        <span class="timeline-date">Anos 313 - 385 — Da Perseguição ao Império</span>
+                        <strong>A Consolidação Histórica:</strong> Durante os primeiros três séculos, os cristãos enfrentaram perseguições intermitentes e brutais por se recusarem a cultuar os deuses pagãos e o imperador romano. A grande virada histórica ocorreu no ano de 313 d.C., quando o imperador Constantino promulgou o Edito de Milão, garantindo a neutralidade religiosa e o fim da opressão estatal. 
+                        Pouco depois, no ano de 380 d.C., através do Edito de Tessalônica emitido pelo imperador Teodósio, o Cristianismo tornou-se oficialmente a religião exclusiva do Império Romano, alterando drasticamente a estrutura social e política do Ocidente e pavimentando sua expansão global nos séculos seguintes.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-box">
+                <span class="timeline-date">Principais Ramos Atuais</span>
+                <p>Ao longo da sua história, o Cristianismo passou por grandes cisões teológicas e políticas. A primeira ocorreu em 1054 com o Grande Cisma do Oriente, dividindo a Igreja entre Católica Romana no Ocidente e Ortodoxa no Oriente. Séculos mais tarde, em 1517, a Reforma Protestante liderada por Martinho Lutero pulverizou a hegemonia católica na Europa Ocidental, originando centenas de denominações protestantes e evangélicas que mantêm a centralidade em Jesus Cristo e na Bíblia Sagrada como a palavra divinamente inspirada.</p>
+            </div>
+
+            <div class="box-destaque" style="border-left-color: #ffd633;">
+                "Ame o Senhor, seu Deus, de todo o seu coração, de toda a sua alma e de todo o seu entendimento, e ame o seu próximo como a si mesmo. Nisto reside toda a Lei e os Profetas."
+            </div>
+
+            <div class="timeline-box">
+                <span class="timeline-date">A Prática e a Teologia</span>
+                <p>A teologia cristã baseia-se fortemente na doutrina da Santíssima Trindade (Pai, Filho e Espírito Santo), na redenção dos pecados através do sacrifício vicário de Cristo na cruz e na promessa da vida eterna na ressurreição final. Suas práticas litúrgicas mais sagradas incluem os sacramentos do Batismo e da Eucaristia (Santa Ceia), acompanhados por uma busca diária pela vivência das virtudes da fé, da esperança e da caridade universal.</p>
+            </div>
+        </div>
+
+        <!-- ABA 2: ISLAMISMO -->
+        <div id="islamismo" class="tab-content">
+            <div class="bio-header">
+                <h2>O Islamismo</h2>
+                <p>Submissão à Vontade do Criador Único</p>
+            </div>
+            
+            <div class="profile-wrapper-top">
+                <!-- Imagem colada na parte de cima da explicação -->
+                <img src="https://via.placeholder.com/500x250" alt="Imagem Islamismo" class="profile-pic-top">
+                
+                <div class="bio-desc">
+                    <p><strong>O Islã</strong> é a religião que mais cresce no mundo contemporâneo, fundamentada na submissão total a Allah (Deus Único). A história do Islã tem início na Península Arábica no ano de 610 d.C., quando o Profeta Muhammad (Maomé), durante um período de reclusão meditativa na caverna de Hira, recebeu as primeiras revelações divinas por meio do Arcanjo Gabriel. Essas revelações foram memorizadas e registradas ao longo de vinte e três anos, resultando no Alcorão Sagrado, o livro considerado a palavra literal e inalterada de Deus.</p>
+                    <p>O ano de 622 d.C. marca um evento central para o Islã: a Hégira, que foi a migração forçada de Muhammad e seus seguidores da cidade de Meca para Medina devido às fortes perseguições dos clãs pagãos locais. Esse episódio simboliza a fundação da primeira comunidade islâmica organizada (Ummah) e serve como o marco inicial para a contagem do calendário islâmico.</p>
+                </div>
+            </div>
+
+            <div class="box-vintage">
+                <h3>Os Cinco Pilares do Islã</h3>
+                <p>A prática de vida de todo muçulmano é rigidamente ancorada em cinco deveres essenciais: 1. A Shahada (testemunho de fé de que não há divindade além de Allah e Muhammad é Seu servo e mensageiro); 2. O Salat (as cinco orações diárias obrigatórias voltadas em direção à Caaba em Meca); 3. O Zakat (a doação anual obrigatória de uma porcentagem dos bens para os necessitados); 4. O Sawm (o jejum ritual diário durante o mês sagrado do Ramadã); e 5. O Hajj (a peregrinação sagrada à Meca que deve ser realizada ao menos uma vez na vida por aqueles que possuem condições financeiras e físicas).</p>
+            </div>
+
+            <div class="grid-dois-campos">
+                <div class="campo-item">
+                    <h4>Ramo Sunita</h4>
+                    <p>Representa a maioria absoluta dos muçulmanos (cerca de 85% a 90%). Defende que o líder da comunidade (Califa) após a morte de Muhammad deveria ser escolhido por consenso com base nas virtudes e na Sunnah (tradição do profeta).</p>
+                </div>
+                <div class="campo-item">
+                    <h4>Ramo Xiita</h4>
+                    <p>Surgiu a partir da divergência política e espiritual sobre a sucessão legítima. Afirmam que a liderança da comunidade islâmica pertencia por direito divino e hereditário exclusivamente à linhagem direta do profeta, começando por seu genro Ali.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 3: HINDUÍSMO -->
+        <div id="hinduismo" class="tab-content">
+            <div class="bio-header">
+                <h2>O Hinduísmo</h2>
+                <p>A Eterna Lei Universal e os Ciclos da Alma</p>
+            </div>
+            
+            <div class="profile-wrapper-top">
+                <!-- Imagem colada na parte de cima da explicação -->
+                <img src="https://via.placeholder.com/500x250" alt="Imagem Hinduísmo" class="profile-pic-top">
+                
+                <div class="bio-desc">
+                    <p>O <strong>Hinduísmo</strong>, também conhecido como *Sanatana Dharma* (a ordem eterna), difere substancialmente das religiões abraâmicas por não possuir um fundador histórico único, uma estrutura eclesiástica centralizada ou um único texto dogmático regulador. Suas raízes são incrivelmente profundas, remontando a mais de 1500 a.C. no vale do Rio Indo, integrando uma vasta gama de tradições locais, práticas espirituais, correntes filosóficas e sistemas cosmológicos complexos.</p>
+                    <p>A base documental mais antiga do Hinduísmo encontra-se nos *Vedas*, uma coleção épica de hinos, rituais e mantras sagrados revelados aos antigos sábios (*rishis*). Posteriormente, os textos dos *Upanishads*, o *Bhagavad Gita* e as epopeias do *Ramayana* e *Mahabharata* expandiram a filosofia espiritual hindu, abordando a natureza íntima da alma humana (*Atman*) e sua profunda identidade unificada com o Espírito Universal Cósmico (*Brahman*).</p>
+                </div>
+            </div>
+
+            <div class="box-vintage">
+                <h3>Os Pilares Filosóficos: Karma e Samsara</h3>
+                <p>A metafísica hindu está fundamentada na lei inabalável do Karma (ação e reação), onde cada pensamento e ato gera uma consequência correspondente que molda a realidade presente e futura do indivíduo. A alma é vista como prisioneira do Samsara (o ciclo perpétuo de mortes e renascimentos). O grande objetivo supremo da existência humana é atingir o *Moksha*, que consiste na libertação definitiva desse ciclo doloroso de reencarnações através do despertar espiritual e da dissolução do ego individual em Brahman.</p>
+            </div>
+
+            <div class="box-destaque">
+                <h3>A Diversidade Divina</h3>
+                <p>Embora seja frequentemente percebido de fora como uma fé estritamente politeísta devido aos seus milhões de deuses, as correntes filosóficas hindus mais proeminentes veem as diferentes divindades (como Brahma o Criador, Vishnu o Preservador e Shiva o Destruidor) como facetas, avatares ou manifestações antropomórficas personalizadas de uma única Realidade Divina Suprema e Sem Forma que tudo permeia.</p>
+            </div>
+        </div>
+
+        <!-- ABA 4: BUDISMO -->
+        <div id="budismo" class="tab-content">
+            <div class="bio-header">
+                <h2>O Budismo</h2>
+                <p>O Caminho do Meio para a Iluminação e o Fim do Sofrimento</p>
+            </div>
+            
+            <div class="profile-wrapper-top">
+                <!-- Imagem colada na parte de cima da explicação -->
+                <img src="https://via.placeholder.com/500x250" alt="Imagem Budismo" class="profile-pic-top">
+                
+                <div class="bio-desc">
+                    <p>O <strong>Budismo</strong> desenvolveu-se na Índia antiga por volta do século VI a.C., fundado a partir da experiência transformadora de Siddhartha Gautama, um príncipe do clã Shakya que abandonou os luxos de seu palácio para buscar uma solução definitiva para a velhice, a doença e a morte. Após anos de asceticismo extremo e profunda meditação sob a árvore Bodhi, ele alcançou o estado de iluminação espiritual pura, tornando-se o Buda, o Desperto.</p>
+                    <p>A essência prática de seus ensinamentos (Dharma) foi proclamada em seu primeiro sermão nas "As Quatro Nobres Verdades": 1. A existência está inevitavelmente associada ao sofrimento ou insatisfação (*Dukkha*); 2. A origem do sofrimento está no apego egoísta e no desejo ardente (*Tanha*); 3. A cessação do sofrimento é plenamente possível eliminando o desejo; 4. O caminho para a extinção do desejo é a prática do Nobre Caminho Óctuplo, um guia de conduta ética, disciplina mental e sabedoria.</p>
+                </div>
+            </div>
+
+            <div class="box-destaque">
+                <h3>O Nobre Caminho Óctuplo e o Nirvana</h3>
+                <p>O Caminho Óctuplo propõe o equilíbrio perfeito em oito aspectos da vida: Compreensão Correta, Pensamento Correto, Fala Correta, Ação Correta, Modo de Vida Correto, Esforço Correto, Atenção Plena Correta e Concentração Correta. Através dessa conduta equilibrada que evita os extremos do hedonismo e da automutilação, o praticante purifica sua mente, quebra os laços ilusórios da ignorância existencial e atinge o *Nirvana*: o estado transcendental de paz absoluta, extinção do ego e libertação dos renascimentos.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Rodapé Único -->
+    <footer>
+        &copy; 2026 Caminhos da Fé - Todos os direitos reservados.
+    </footer>
+
+    <!-- SCRIPT DE INTEGRAÇÃO DAS ABAS -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
